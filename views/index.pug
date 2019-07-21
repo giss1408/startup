@@ -1,0 +1,118 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+append styles
+	// Custom styles for this template 
+	link(href="/stylesheets/carousel.css", rel="stylesheet")
+block body
+	.navbar-wrapper
+		.container
+			nav.navbar.navbar-default.navbar-static-top
+				.container
+					.navbar-header
+						button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+							
+						a(class="navbar-brand", href="#", style={color: "#008000"}) NewBonn Ivoire
+					#navbar.navbar-collapse.collapse
+						ul.nav.navbar-nav
+							li.active
+								a(href="#", style={color: "#008000"}) Home
+							li
+								a(href="#about", style={color: "#008000"}) About
+							li
+								a(href="#contact", style={color: "#008000"}) Contact
+							li.dropdown
+								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false', style={color: "#008000"})
+									| Divers 
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='#', style={color: "#008000"}) Adhérer
+									li
+										a(href='#', style={color: "#008000"}) Le Bureau
+									li
+										a(href='#', style={color: "#008000"}) Les Infos de Bonn
+									//li.divider
+									//li.dropdown-header Nav header
+									//li
+										a(href='#') Separated link
+									//li
+										a(href='#') One more separated link
+							
+	// Carousel {style( color = '009e60')}
+	// ==================================================
+	+carousel("myCarousel",[{image:"../images/carousel7.jpg", h1:"Le Nouveau Bonn Ivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité. CONNAISSEUR CONNAIT.", button:{caption:"Regarde nos actions",url:"#"}},    {image:"../images/carousel2.jpg",h1:"Apolitique et laïc",p:"Plus jamais de division. Ni église, ni mosquée. Tous ensemble.",button:{caption:"Notre status",url:"#"}},{image:"../images/carousel3.jpg",h1:"",p:"",button:{caption:"Nous voulons te convaincre",url:"#"}}, {image:"../images/carousel4.jpg", h1:"Relévons le niveau",p:"Ensemble, bâtissons une association forte pour rester FIER(E)S d´être IVOIRIEN(NE)S.", button:{caption:"Adhère aujourd'hui",url:"#"}}, {image:"../images/carousel5.jpg", h1:"",p:"", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}, {image:"../images/carousel6.jpg", h1:"",p:"", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}, {image:"../images/carousel1.jpg",h1:"Le Nouveau Bonn Ivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité. CONNAISSEUR CONNAIT.", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}])
+	//  Marketing messaging and featurettes
+	//  ==================================================
+	// Wrap the rest of the page in another container to center all the content.
+	.container.marketing
+		// Three columns of text below the carousel
+		.row
+			.col-lg-4
+				img.img-circle(src='../images/marketing1.jpg', alt='Generic placeholder image', width='200', height='200')
+				h2 Le nouveau Bonn Ivoire
+				p
+					| Le renouveau passe par le nettoyage du passé, mais aussi sur le fait de s'appuyer sur les bases anciennes. Nous voulons renover, réunir, unifier,  mais aussi éduquer en tant que mères, femmes et soeurs. Loin de notre terre natale, nous unifier n' est pas qu'une necessité. C'est aussi un impératif
+				p
+					a.btn.btn-default(href='#', role='button') Détails »
+			.col-lg-4
+				img.img-circle(src='../images/marketing2.jpg', alt='Generic placeholder image', width='200', height='200')
+				h2 Apolitique et laïc
+				p
+					| Nous promettons de ne nous mêler ni de politique, ni de réligion. Nous ne sommes ni pas un parti politique, ni une institution politique. Notre expertise se situe dans la vie en Allemagne en tant que migrant(e), pour nous organiser, nous connaitre, nous entraider. C' est à cela que nous vous mettons au défi de nous juger.
+				p
+					a.btn.btn-default(href='#', role='button') Détails »
+			.col-lg-4
+				img.img-circle(src='../images/marketing3.jpg', alt='Generic placeholder image', width='200', height='200')
+				h2 Convaincre par les actions
+				p
+					| De même que le sel ne clamera jamais haut et fort qu´il est salé, nous voulons laisser parler nos actions pour nous. Mais nous avons besoin de toi, de vous, de votre soutien. Nous sommes des bénévolles avec plein d'idées, de professionalisme, de courage et de rage de nous voir frères et soeur divisés.
+				p
+					a.btn.btn-default(href='#', role='button') Détails »
+		// START THE FEATURETTES
+		hr.featurette-divider
+		.row.featurette
+			.col-md-7
+				h2.featurette-heading
+					| First featurette heading. 
+					span.text-muted It'll blow your mind.
+				p.lead
+					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+			.col-md-5
+				img.featurette-image.img-responsive.center-block(src='../images/featurette1.jpg', alt='Generic placeholder image')
+		hr.featurette-divider
+		.row.featurette
+			.col-md-7.col-md-push-5
+				h2.featurette-heading
+					| Oh yeah, it's that good. 
+					span.text-muted See for yourself.
+				p.lead
+					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+			.col-md-5.col-md-pull-7
+				img.featurette-image.img-responsive.center-block(src='../images/featurette2.jpg', alt='Generic placeholder image')
+		hr.featurette-divider
+		.row.featurette
+			.col-md-7
+				h2.featurette-heading
+					| And lastly, this one. 
+					span.text-muted Checkmate.
+				p.lead
+					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+			.col-md-5
+				img.featurette-image.img-responsive.center-block(src='../images/featurette3.jpg', alt='Generic placeholder image')
+		hr.featurette-divider
+		// /END THE FEATURETTES
+		// FOOTER
+		footer
+			p.pull-right
+				a(href='#') Back to top
+			p
+				| © 2019 NewBonn Ivoire e.V. 
+				a(href='#') Privacy
+				|  · 
+				a(href='#') Terms
+
+
+
