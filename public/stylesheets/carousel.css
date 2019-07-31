@@ -5,6 +5,7 @@
 body {
     padding-bottom: 40px;
     color: #5a5a5a;
+    /*color: #F77F00;*/
   }
   /* CUSTOMIZE THE NAVBAR
   -------------------------------------------------- */
@@ -29,7 +30,7 @@ body {
   }
   .navbar-wrapper .navbar .container {
     width: auto;
-    background-color: #EB6124;
+    background-color: #F77F00;
     
   }
   
