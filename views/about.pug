@@ -1,0 +1,29 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append styles
+	//	!-- Custom styles for this template --
+	link(href="/stylesheets/cover.css", rel="stylesheet")
+
+block body
+	.site-wrapper
+		.site-wrapper-inner
+			.cover-container
+				.masthead.clearfix
+					.inner
+						h3.masthead-brand bonnivoire-ev
+						nav
+							ul.nav.masthead-nav
+								//li.active 
+									a(href="#") Home
+								//li
+									a(href="#") Features
+								//li
+									a(href="#") Contact
+				.inner.cover
+					h1.cover-heading Notre site est en construction.
+					p.lead Très bientôt nous serons en ligne. Un peu de patience - c´est une surprise. Nous serons modernes, créatifs et smart.
+					p.lead
+					a(href="../", class="btn btn-lg btn-default", style={color: "#009E60"}) À bientôt
+
+				.mastfoot
+					.inner
+						//p Cover template for <a href="http://getbootstrap.com">Bootstrap </a>, by <a href="https://twitter.com/mdo">@mdo</a>.
