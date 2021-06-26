@@ -1,0 +1,105 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+append styles
+	// Custom styles for this template
+	link(href='stylesheets/blog.css', rel='stylesheet')
+block body
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href='/blog', style={color: "#FFFFFFFF"}) Kongossa
+					//li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) Conseils beauté
+					//li
+						a(href='/about', style={color: "#FFFFFFFF"}) Conseils cuisine
+					//li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+							//a.blog-nav-item(href='#') About			
+
+
+	.container
+		.blog-header
+			h1.blog-title Bonnivoire #{__('KONGOSSA_NAV_CUISINE')}.
+			p.lead.blog-description 
+				font(color="#009E60") La cuisine africaine à l'honneur.
+	hr.featurette-divider
+
+	section.details-card
+			.container
+				.row
+					.col-md-4
+						.card-content
+							.card-img
+								img(src='../images/cuisine/sauceGraine.jpg' alt='')
+								span
+									h4 Sauce Graine
+							.card-desc
+								h3 Sauce Graine ivoirienne
+								p
+									| La sauce graine ivoirienne, accompagnée d'un foutou rouge. Tout un art que bonnivoire e.V. vous présente
+									| en 8mn. Regardez.
+								h4 Ingrédients
+								a.btn-card(href='https://youtu.be/Z045fKzwaYo') Vidéo
+					.col-md-4
+						//Temporary video
+						.container
+							.embed-responsive.embed-responsive-16by9
+								iframe(width='560' height='315' src='https://www.youtube.com/embed/Z045fKzwaYo' frameborder='0' allow='accelerometer autoplay = 1; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+							<br/>
+							<br/>
+							<br/>
+							h3.display-4 
+								font(color="#009E60") La Sauce graine ivoirienne.
+							font(color="#009E60") 
+								| Niveau de difficulté: Avancé. <br/>
+								| Savez-vous pourquoi nos grand-mères ne regardent jamais les recettes écrites pour faire la cuisine? Elles ont l' oeil
+								| pour reconnaitre une viande cuite, un poisson à point... Cuisiner est un art qui ne peut se résumer sur du papier. C'est comme demander à Picasso de vous donner une recette pour bien peindre.
+								| Bonnivoire organise des cours de cuisine africaine. <br/> Prochain cours: Sauce Graine de palme ivoirienne Sa. 30. 11. 2019 - 15h-17h. <br/>Inscription et information par mail.<br/>
+								| Bon appetit.
+						//.card-content
+							.card-img
+								img(src='https://placeimg.com/380/230/animals' alt='')
+								span
+									h4 heading2
+							.card-desc
+								h3 Heading2
+								p
+									| Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
+									| voluptas totam
+								a.btn-card(href='#') Read
+					.col-md-4
+						//.card-content
+							.card-img
+								img(src='https://placeimg.com/380/230/tech' alt='')
+								span
+									h4 heading3
+							.card-desc
+								h3 Heading3
+								p
+									| Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
+									| voluptas totam
+								a.btn-card(href='#') Read
+	
+	footer.blog-footer
+		p
+			font(color="#009E60") Bonnivoire cuisine <br/> 
+			font(color="#F77F00") © 2019 bonnivoire-ev 
+				a(href='#', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='#', style={color: "#F77F00"}) -Terms

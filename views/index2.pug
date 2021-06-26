@@ -1,0 +1,1624 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+	title bonnivoire e.V.
+	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+	link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet')
+	link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js')
+	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+	script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+	script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+	script(src='script/script.js')
+
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+
+	// cookiealert styles
+	link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+	link(href="/stylesheets/newIndex.css", rel="stylesheet")
+	link(href='/stylesheets/languages.min.css', rel="stylesheet")
+body
+	#mynavBar.nav.navbar.navbar-expand-lg.navbar-light.fixed-top(style="background-color: #009E60")
+		.container
+			a.navbar-brand(href='#' style={color: "#F77F00"}) 
+				strong bonnivoire e.V.
+			button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+			#navbarResponsive.collapse.navbar-collapse
+				ul.navbar-nav.ml-auto
+					li.nav-item.active
+						a.nav-link(href='#' style={color: "#F77F00"})
+							strong #{__('ACCUEIL')}
+							span.sr-only (current)
+					li.nav-item.dropdown
+						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown'  aria-expanded='false' style={color: "#F77F00"})
+							strong #{__('NOUS_CONNAITRE')}
+						.dropdown-menu(aria-labelledby='navbarDropdown')
+							a.dropdown-item(href='#bonnIvoire' style={color: "#F77F00"}) Bonnivoire
+							a.dropdown-item(href='/message' style={color: "#F77F00"}) Vision
+							a.dropdown-item(href='/adhesion' style={color: "#F77F00"}) #{__('ADHERER')}
+							a.dropdown-item(href='#about' style={color: "#F77F00"}) #{__('BUREAU')}
+							a.dropdown-item(href='/activites' style={color: "#F77F00"}) #{__('ACTIVITES')}
+							a.dropdown-item(href='/necrologie' style={color: "#F77F00"}) Nécrologie
+							.dropdown-divider
+							a.dropdown-item(href='/coverSpender' style={color: "#F77F00"}) #{__('DONATION_FAIRE_UN_DON')}
+							a.dropdown-item(href='/projets' style={color: "#F77F00"}) #{__('PROJECTS')}
+							a.dropdown-item(href='/gallery' style={color: "#F77F00"}) #{__('PHOTO_GALLERIE')}
+					li.nav-item
+						a.nav-link(href='/blog' style={color: "#F77F00"}) 
+							strong Kongossa
+					li.nav-item.dropdown
+						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown'  aria-expanded='false' style={color: "#F77F00"})
+							strong #{__('LIENS_UTILES')}
+						.dropdown-menu(aria-labelledby='navbarDropdown')
+							a.dropdown-item(href='https://ambaci.de/' style={color: "#F77F00"}) #{__('AMBASSADE')}
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365658' style={color: "#F77F00"}) #{__('LOI_IMMIGRATION')}
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365666' style={color: "#F77F00"}) #{__('NATURALISATION')}
+							.dropdown-divider
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/02-apprendre-travailler-artikel/1361114' style={color: "#F77F00"}) #{__('TRAVAILLER_EN_ALLEMAGNE')} 
+							a.dropdown-item(href='https://www.deutschakademie.de/online-deutschkurs' style={color: "#F77F00"}) #{__('APPRENDRE_ALLEMAND')}
+					li.nav-item
+						a.nav-link(href='#contact' style={color: "#F77F00"}) 
+							strong #{__('CONTACT')}
+					//li
+						.btn-group.dropdown
+							button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+								span.lang-sm.lang-lbl-full(lang='fr')
+								caret
+							.dropdown-menu(aria-labelledby='dropdownMenuButton')
+								a.dropdown-item(href='/?lang=de')
+									span.lang-sm.lang-lbl-full(lang='de')
+									caret
+								a.dropdown-item(href='/?lang=en') 
+									span.lang-sm.lang-lbl-full(lang='en')
+header
+	#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+		ol.carousel-indicators
+			li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+			li(data-target='#carouselExampleIndicators' data-slide-to='1')
+			li(data-target='#carouselExampleIndicators' data-slide-to='2')
+			li(data-target='#carouselExampleIndicators' data-slide-to='3')
+			li(data-target='#carouselExampleIndicators' data-slide-to='4')
+			li(data-target='#carouselExampleIndicators' data-slide-to='5')
+		.carousel-inner(role='listbox')
+			// Slide One - Set the background image for this slide in the line below
+			.carousel-item.active(style="background-image: url('../images/carousel_new_1.jpg')")
+				.carousel-caption
+					h3.display-4 
+						strong #{__('APOLITIQUE_LAIC')}
+					p.lead 
+						strong #{__('PLUS_DIVISION')}
+					//p.button.btn.btn-primary.btn-lg(type='button') Large button
+					p
+					a.btn.btn-primay(href='#bonnIvoire', style={background:"#F77F00 ",color: "#ffffff"}, role='button') #{__('NOUS_CONNAITRE')} »
+					
+			// Slide Two - Set the background image for this slide in the line below
+			.carousel-item(style="background-image: url('../images/carousel_new_2.jpg')")
+				.container
+					.carousel-caption.text-left
+						h3.display-4 
+							strong #{__('FORCE_FEMMES')}
+						p.lead 
+							strong #{__('DERRIERE_FEMMES_FORTES')}
+						p
+						a.btn.btn-primay(href='/message', style={background:"#F77F00 ",color: "#ffffff"}, role='button') #{__('TE_CONVAINCRE')} »
+						
+			// Slide Three - Set the background image for this slide in the line below
+			.carousel-item(style="background-image: url('../images/carousel_try9.jpg')")
+				.carousel-caption.text-left
+					h3.display-4 
+						strong #{__('RELEVER_NIVEAU')}
+					p.lead 
+						strong #{__('BATISSONS_ASSOCIATION_FORTE')}
+					p
+					a.btn.btn-primay(href='/adhesion', style={background:"#F77F00 ",color: "#ffffff"}, role='button') #{__('ADHERE_AUJOURDHUI')} »
+			// Slide One - Set the background image for this slide in the line below
+			.carousel-item(style="background-image: url('../images/carousel_try7.jpg')")
+				.carousel-caption.text-right
+					h3.display-4 
+						strong #{__('VISITE_KONGOSSA')}
+					//p.lead 
+						strong L'affairage chez bonnivoire - Colombe t'attend.
+					p
+					a.btn.btn-primay(href='/blog', style={background:"#F77F00 ",color: "#ffffff"}, role='button') Kongossa »
+			// Slide Two - Set the background image for this slide in the line below
+			.carousel-item(style="background-image: url('../images/carousel_try6.jpg')")
+				.carousel-caption.text-left
+					h3.display-4 
+						strong #{__('VIE_EPREUVES')}
+					p.lead 
+						strong #{__('BONNIVOIRE_ACCOMPAGNE')}
+					p
+					a.btn.btn-primay(href='/necrologie', style={background:"#F77F00 ",color: "#ffffff"}, role='button') Bonnivoire Nécrologie »
+			// Slide Three - Set the background image for this slide in the line below
+			.carousel-item(style="background-image: url('../images/carousel_try5.jpg')")
+				.carousel-caption.text-left
+					h3.display-4 
+						strong #{__('LA_NOUVELLE_BONNIVOIRE')}
+					p.lead 
+						strong #{__('AIDER_SANS_RETENUE')}
+					p
+					a.btn.btn-primay(href='/message', style={background:"#F77F00 ",color: "#ffffff"}, role='button') #{__('FEUILLE_ROUTE')} »
+		a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+			span.carousel-control-prev-icon(aria-hidden='true')
+			span.sr-only Previous
+		a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+			span.carousel-control-next-icon(aria-hidden='true')
+			span.sr-only Next
+		
+	// Page Content
+	.container-fluid
+		.jumbotron(style='background-color: #FFFFFF')
+			marquee(behavior='scroll' direction='left' scrollamount='4' style={background: "#009E60"} overflow='hidden') 
+				p
+					strong
+						font(color= "#FFFFFF") #{__('MARQUEE_SEMINAIRE_FEB20')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						font(color= "#FFFFFF") #{__('MARQUEE_SEMINAIRE_FEB20_THEME_1')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						font(color= "#FFFFFF") #{__('MARQUEE_SEMINAIRE_FEB20_THEME_2')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						font(color= "#FFFFFF") #{__('MARQUEE_SEMINAIRE_FEB20_THEME_3')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						font(color= "#FFFFFF") #{__('MARQUEE_SEMINAIRE_FEB20_MESSAGE')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					//	font(color= "#FFFFFF") #{__('MARQUEE_1')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					//	font(color= "#FFFFFF") #{__('MARQUEE_2')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					//	font(color= "#FFFFFF") #{__('MARQUEE_3')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					//	//font(color= "#FFFFFF") #{__('MARQUEE_4')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					//	font(color= "#FFFFFF") #{__('MARQUEE_5')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					//	font(color= "#FFFFFF") #{__('MARQUEE_6')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	.container
+			.auto-container
+				.row
+					.column.col-lg-6.col-md-12.col-sm-12
+						.sec-title
+							h2 #{__('BONNIVOIRE_TREFFEN_02_2020')}
+			hr
+			.embed-responsive.embed-responsive-16by9
+				iframe(width='560' height='315' src='https://www.youtube.com/embed/pgA8XPwPsIE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+			
+			hr
+			a.head-btn.head-btn2.btn.text-uppercase(href='/coverSpender' style={background:"#009E60 ",color: "#ffffff"}) #{__('NOUS_SOUTENIR')}  »	
+			<br/>
+			<br/>
+			hr
+			.container
+				.row
+					.col-sm-6.col-lg-12
+						//img.img-responsive(src='../images/seminaires/Seminaire20Feb20_1.png' alt='Snow' style='width:100%')
+						object(width='900' height='700' data='../images/seminaires/bonnivoire_eV_Semianre_20Feb_Flyer_deutsch.pdf')
+							.row
+								.col-xs-6
+									img.img-responsive(src='../images/seminaires/Seminaire20Feb20_1.png' alt='Forest' style='width:100%')
+								.col-xs-6
+									img.img-responsive(src='../images/seminaires/Seminaire20Feb20_2.png' style='width:100%')
+						//iframe(src='../images/seminaires/bonnivoire_Treffen_20Feb_Flyer_deutsch.pdf' alt='Does not show in your mobile' style='width:100%', height='500')
+							p 
+								| Oops! Your browser does not support PDFs!
+							p
+								| a(href='../images/seminaires/bonnivoire_Treffen_20Feb_Flyer_deutsch.pdf') Download Instead
+						//iframe(src='http://docs.google.com/gview?embedded=true&url=https://drive.google.com/file/d/1a3Uv1fKUczR3yVU4jqO2epYLWtNWIaxF/view?usp=sharing' style='width:600')
+							
+					//.col-sm-6
+						//img.img-responsive(src='../images/seminaires/Seminaire20Feb20_2.png' alt='Forest' style='width:100%')
+						iframe(src='plan.pdf' width='600' height='200')
+				//.row
+					.col-xs-6
+						img.img-responsive(src='../images/seminaires/Seminaire20Feb20_1.png')
+					.col-xs-6
+						img.img-responsive(src='../images/seminaires/Seminaire20Feb20_2.png')
+					//.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://blog.arborday.org/wp-content/uploads/2013/02/NEC1-300x200.jpg')
+						.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://th03.deviantart.net/fs70/200H/f/2010/256/0/9/painting_of_nature_by_dhikagraph-d2ynalq.jpg')
+						.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://www.virginia.org/uploadedImages/virginiaorg/Images/OrgImages/H/HamptonConventionVisitorBureau/Grandview_Nature_Preserve.jpg?width=300&height=200&scale=upscalecanvas')
+						.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://th03.deviantart.net/fs70/200H/f/2010/256/0/9/painting_of_nature_by_dhikagraph-d2ynalq.jpg')
+						.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg')
+						.col-md-3.col-sm-4.col-xs-6
+						img.img-responsive(src='http://blog.arborday.org/wp-content/uploads/2013/02/NEC1-300x200.jpg')
+
+			hr
+			//.embed-responsive.embed-responsive-16by9
+					iframe(width='560' height='315' src='https://www.youtube.com/embed/deCjJ4DHm6Q' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+			
+			//<br/>
+			//<br/>
+			//hr
+			//.auto-container
+				.row
+					.column.col-lg-6.col-md-12.col-sm-12
+						.sec-title
+							h2 #{__('BONNIVOIRE_TREFFEN_02_2020')}
+			//hr
+			//#test.container
+				.row
+					h2 Animated Bootstarp Form Headings Style 1/3
+				svg(viewbox='10 10 600 300')
+					// Symbol with text
+					symbol#s-text
+						text.text--line(text-anchor='middle' x='50%' y='50%' dy='.35em')
+							| Bootsnippadffr
+					// Clippath  with text
+					clippath#cp-text
+						text.text--line(text-anchor='middle' x='50%' y='50%' dy='.35em')
+							| Bootsnippadffr
+					// Group for shadow
+					g.shadow(clip-path='url(#cp-text)')
+						rect.anim-shape.anim-shape--shadow(width='100%' height='100%')
+					// Group with clippath for text
+					g.colortext(clip-path='url(#cp-text)')
+						// Animated shapes inside text
+						rect.anim-shape(width='100%' height='100%')
+						rect.anim-shape(width='80%' height='100%')
+						rect.anim-shape(width='60%' height='100%')
+						rect.anim-shape(width='40%' height='100%')
+						rect.anim-shape(width='20%' height='100%')
+						// Transparent copy of text to keep patterned text selectable
+					use.text--transparent(xlink:href='#s-text')
+				.row
+					h2 Animated Bootstarp Form Headings Style 2/3
+				.bs-example.bs-example-type(data-example-id='simple-headings')
+					table.table
+						tbody
+							tr
+								td
+									h1
+										.box-with-text-stripped h1. Bootstrap heading
+								td.type-info Semibold 36px
+							tr
+								td
+									h2
+										.box-with-text-stripped h2. Bootstrap heading
+								td.type-info Semibold 30px
+							tr
+								td
+									h3
+										.box-with-text-stripped h3. Bootstrap heading
+								td.type-info Semibold 24px
+							tr
+								td
+									h4
+										.box-with-text-stripped h4. Bootstrap heading
+								td.type-info Semibold 18px
+							tr
+								td
+									h5
+										.box-with-text-stripped h5. Bootstrap heading
+								td.type-info Semibold 14px
+							tr
+								td
+									h6
+										.box-with-text-stripped h6. Bootstrap heading
+								td.type-info Semibold 12px
+				.row
+				h2 Animated Bootstarp Form Headings Style 3/3
+				.bs-example.bs-example-type(data-example-id='simple-headings')
+					table.table
+						tbody
+							tr
+								td
+									h1
+										.box-with-text
+											.text h1. Bootstrap heading
+								td.type-info Semibold 36px
+							tr
+								td
+									h2
+										.box-with-text
+											.text h2. Bootstrap heading
+								td.type-info Semibold 30px
+							tr
+								td
+									h3
+										.box-with-text
+											.text h3. Bootstrap heading
+								td.type-info Semibold 24px
+							tr
+								td
+									h4
+										.box-with-text
+											.text h4. Bootstrap heading
+								td.type-info Semibold 18px
+							tr
+								td
+									h5
+										.box-with-text
+											.text h5. Bootstrap heading
+								td.type-info Semibold 14px
+							tr
+								td
+									h6
+										.box-with-text
+											.text h6. Bootstrap heading
+								td.type-info Semibold 12px
+
+	//.container
+				.container-fluid
+					.row.featurette
+						.col-md-5
+							h4.featurette-heading
+								strong
+									font(color="#F77F00") Communiqué de l'ambassade de Côte d'ivoire en allemagne.<br/> 
+								
+							p
+							//	| Rassembler est notre mission première. Nous remerçions tous ceux qui étaient présents. Ça a été un plaisir de vous revoir en bonne santé. Que le SEIGNEUR te garde. 
+						.col-md-7
+							img.featurette-image.img-responsive.center-block(src='../images/Communique_Ambassade_608-AMCIB-DLR-2019.png', alt='Generic placeholder image')
+
+	//hr.featurette-divider
+	//.container
+		.row
+			.col-md-8.col-md-offset-2
+				.heading.text-center
+					h2
+						span 
+							font(color= "#009E60") Bonnivoire Akwaba Köln 14 Sept. 2019
+	//#akwaba.row
+		.column
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_1.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_1x.jpg')
+			//img(src='../images/akwaba_2019/akwaba_2019_09_15_2.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_3.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_4.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_5.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_ss.jpg')
+		.column
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_7.jpg')
+			//img(src='../images/akwaba_2019/akwaba_2019_09_15_8.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_9.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_10.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_11.jpg')
+			//img(src='../images/akwaba_2019/akwaba_2019_09_15_12.jpg')
+		.column
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_13.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_14.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_15.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_16.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_17.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_18.jpg')
+			//img(src='../images/akwaba_2019/akwaba_2019_09_15_19.jpg')
+		.column
+			iimg(src='../images/akwaba_2019/akwaba_2019_09_15_20.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_21.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_22.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_23.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_19.jpg')
+			img(src='../images/akwaba_2019/akwaba_2019_09_15_6.jpg')
+
+	hr.featurette-divider
+	.container
+		.row
+			.col-md-8.col-md-offset-2
+				.heading
+					h3
+						span 
+							font(color= "#009E60") #{__('EVENEMENT')}
+	.row
+		.col-lg-7.mx-auto
+			// Timeline https://bootstrapious.com/p/timeline
+			
+			ul.timeline
+				li.timeline-item.bg-white.rounded.ml-3.p-4.shadow
+					.timeline-arrow
+					h2.h5.mb-0 
+						font(color= "#009E60") #{__('BONNIVOIRE_TREFFEN_02_2020_TITRE')}
+					span.small.text-gray
+						i.fa.fa-clock-o.mr-1
+						font(color= "#F77F00")  11.00 Uhr - 18.00Uhr ✹	29 Februar 2020  <br/> MIGRApolis- Haus der Vielfalt Bruedergasse 16-18 53111 Bonn
+					p.text-small.mt-2.font-weight-light
+						| #{__('BONNIVOIRE_TREFFEN_02_2020_TEXT')} <br/>
+						| &nbsp;&nbsp;✹	#{__('BONNIVOIRE_TREFFEN_02_2020_PROGRAM_1')} <br/>
+						| &nbsp;&nbsp;✹	#{__('BONNIVOIRE_TREFFEN_02_2020_PROGRAM_2')} <br/>
+						| &nbsp;&nbsp;✹	#{__('BONNIVOIRE_TREFFEN_02_2020_PROGRAM_3')} <br/>
+					hr
+					//span.small.text-gray
+							font(color= "#009E60") Klicken Sie für den Flyer <br/>
+					//.btn-group
+						button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+							i.glyphicon.glyphicon-cog
+							span.caret
+						ul.dropdown-menu(role='menu')
+							li
+								a(href='../images/seminaire_Feb_2020_de_web_1.jpg') 
+									font(color= "#009E60") Flyer_Deutsch_Seite_1
+							li
+								a(href='../images/seminaire_Feb_2020_de_web_2.jpg') 
+									font(color= "#009E60") Flyer_Deutsch_Seite_2
+							li
+								a(href='../images/seminaire_Feb_2020_fr_web_1.jpg') 
+									font(color= "#009E60") Flyer_Francais_Page_1
+							li
+								a(href='../images/seminaire_Feb_2020_fr_web_2.jpg') 
+									font(color= "#009E60") Flyer_Francais_Page_2
+				li.timeline-item.bg-white.rounded.ml-3.p-4.shadow
+					.timeline-arrow
+					h2.h5.mb-0 
+						font(color= "#009E60") Meeting Diaspora -  „Engagement der afrikanischen Diaspora sichtbar machen und Dialog fördern“
+					span.small.text-gray
+						i.fa.fa-clock-o.mr-1
+						font(color= "#F77F00") Bonnivoire e.V. ist dabei &nbsp;✹	 2020 - 2022
+					p.text-small.mt-2.font-weight-light
+						| &nbsp;&nbsp;✹	Coaching und Mentoring-Programm für Vereine. <br/>
+						| &nbsp;&nbsp;✹	Generationen-Dialoge. <br/>
+						| &nbsp;&nbsp;✹	Empowerment. <br/>
+						
+						.row
+							.col-12.col-sm-6.col-md-4.image-grid-item
+								img.img-fluid(src='../images/seminaires/dialog_project.JPG')
+						//.container-fluid
+							.row
+								.col-sm-3
+									img.img-responsive(src='../images/seminaires/dialog_project.JPG')
+					//.row
+						.col-lg-4.text-center
+							img(src='../images/MeetingDiaspora.JPG')
+					hr
+					//.btn-group
+						button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+							i.glyphicon.glyphicon-cog
+							span.caret
+						ul.dropdown-menu(role='menu')
+							li
+								a(href='http://www.akwaaba.buendnis14afrika.org/') 
+									font(color='#FF0000') Not Secure website
+					
+				//li.timeline-item.bg-white.rounded.ml-3.p-4.shadow
+					.timeline-arrow
+					h2.h5.mb-0 
+						a(href='/sortie') 
+							font(color= "#009E60") Sortie au Parc Animalier de Rolandseck
+					span.small.text-gray
+						i.fa.fa-clock-o.mr-1
+						font(color= "#F77F00")  Départ Bonn HBf 10h ✹	07 September 2019
+					p.text-small.mt-2.font-weight-light
+						p 
+							| Une sortie en famille pour petits et grands pour visiter le parc animalier de Rolandseck Am Kasselbach4, 53424 Remagen. A environ 30mn de Bonn, une bonne occasion d'entreprendre en famille.
+							| Animaux, loisir, picnique, air frais. Pour les enfants, une expérience à ne pas rater.
+						hr
+						.btn-group
+							button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+								i.glyphicon.glyphicon-cog
+								span.caret
+							ul.dropdown-menu(role='menu')
+								li
+									a(href='/sortie') 
+										font(color= "#009E60") Flyer
+				//li.timeline-item.bg-white.rounded.ml-3.p-4.shadow
+					.timeline-arrow
+					h2.h5.mb-0 
+						a(href='/AGE') 
+									font(color= "#009E60") AG extraordinaire de bonnivoire
+					span.small.text-gray
+						i.fa.fa-clock-o.mr-1
+						font(color= "#F77F00")  16h ✹	31 August 2019 
+					p.text-small.mt-2.font-weight-light
+						p
+							| La réunion à ne pas louper. La nouvelle bonnivoire vous invite à son AG extraordinaire pour le nouveau départ. 
+							| Le bureau vous exposera son plan, ses idées pour faire de bonnivoire "l'association" des ivoiriens qui fédèrera toutes les autres par sa force, ses projets et ses sponsors.
+							| Ne te laisse pas raconter, prends part à l'avenir.... 
+						hr
+						.btn-group
+							button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+								i.glyphicon.glyphicon-cog
+								span.caret
+							ul.dropdown-menu(role='menu')
+								li
+									a(href='/AGE') 
+										font(color= "#009E60") Convocation
+				// End
+	//hr.featurette-divider
+	//https://bootsnipp.com/snippets/3Albn
+	//section.iq-features
+		.container
+			.row
+				.col-md-8.col-md-offset-2
+					.heading
+						h3
+							span 
+								font(color= "#009E60") #{__('BONNIVOIRE_VALEURS')}
+			.row.align-items-center
+				.col-lg-3.col-md-12
+				.col-lg-6.col-md-12
+					.holderCircle
+						.round
+						.dotCircle
+							span.itemDot.active.itemDot1(data-tab='1')
+								i.fa.fa-clock-o
+								span.forActive
+							span.itemDot.itemDot2(data-tab='2')
+								i.fa.fa-comments
+								span.forActive
+							span.itemDot.itemDot3(data-tab='3')
+								i.fa.fa-users
+								span.forActive
+							span.itemDot.itemDot4(data-tab='4')
+								i.fa.fa-heartbeat
+								span.forActive
+							span.itemDot.itemDot5(data-tab='5')
+								i.fa.fa-info-circle
+								span.forActive
+							span.itemDot.itemDot6(data-tab='6')
+								i.fa.fa-briefcase
+								span.forActive
+						.contentCircle
+							.CirItem.title-box.active.CirItem1
+								h2.title
+									span Culture
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-clock-o
+							.CirItem.title-box.CirItem2
+								h2.title
+									span Democratie
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-comments
+							.CirItem.title-box.CirItem3
+								h2.title
+									span Engagement
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-users
+							.CirItem.title-box.CirItem4
+								h2.title
+									span Developement
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-heartbeat
+							.CirItem.title-box.CirItem5
+								h2.title
+									span Partage
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-info-circle
+							.CirItem.title-box.CirItem6
+								h2.title
+									span Bildung
+								p
+									| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+								i.fa.fa-briefcase
+				.col-lg-3.col-md-12
+
+
+	hr.featurette-divider
+
+	.section#nouveanBonnIvoire.page-section
+		.container
+			// Three columns of text below the carousel
+			.row
+				.col-lg-4.text-center
+					img.rounded-circle(src='../images/IMG-20190825-WA0000.jpg', alt='Generic placeholder image', width='200', height='200')
+					h3 #{__('LA_NOUVELLE_BONNIVOIRE')} 
+					p
+						| #{__('LA_NOUVELLE_BONNIVOIRE_section#nouveanBonnIvoire')} 
+							
+					p
+						a.btn.btn-outline-success.btn-sm(href='/message#convaincre2') #{__('DETAILS_BUTTON')} »
+						//a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message#convaincre2' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+				.col-lg-4.text-center
+					img.rounded-circle(src='../images/terre_DIvoire.jpg', alt='Generic placeholder image', width='200', height='200')
+					h3 #{__('APOLITIQUE_LAIC')}
+					p
+						| #{__('APOLITIQUE_LAIC_section#nouveanBonnIvoire')} 
+					p
+						a.btn.btn-outline-success.btn-sm(href='/message') #{__('DETAILS_BUTTON')} »
+						//a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+				.col-lg-4.text-center
+					img.rounded-circle(src='../images/accomplished.jpg', alt='Generic placeholder image', width='200', height='200')
+					h3 #{__('CONVAINCRE_PAR_ACTES')}
+					p
+						| #{__('CONVAINCRE_PAR_ACTES_section#nouveanBonnIvoire')}
+					p
+						a.btn.btn-outline-success.btn-sm(href='/message#convaincre1') #{__('DETAILS_BUTTON')} »
+						//a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message#convaincre1' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+			// START THE FEATURETTES
+		// https://bootsnipp.com/snippets/mMBqZ
+	//.container
+		h3.pb-3.mb-4.font-italic.border-bottom
+			| Card Styles
+		.row
+			.col-md-6
+				.card.flex-md-row.mb-4.shadow-sm.h-md-250
+					.card-body.d-flex.flex-column.align-items-start
+						strong.d-inline-block.mb-2.text-primary World
+						h6.mb-0
+							a.text-dark(href='#') 40 Percent of People Can&rsquo;t Afford Basics
+						.mb-1.text-muted.small Nov 12
+						p.card-text.mb-auto
+							| This is a wider card with supporting text below as a natural lead-in to additional content.
+						a.btn.btn-outline-primary.btn-sm(role='button' href='http://www.jquery2dotnet.com/') Continue reading
+					img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/arch' style='width: 200px; height: 250px;')
+			.col-md-6
+				.card.flex-md-row.mb-4.shadow-sm.h-md-250
+					.card-body.d-flex.flex-column.align-items-start
+						strong.d-inline-block.mb-2.text-success Health
+						h6.mb-0
+							a.text-dark(href='#') Food for Thought: Diet and Brain Health
+						.mb-1.text-muted.small Nov 11
+						p.card-text.mb-auto
+							| This is a wider card with supporting text below as a natural lead-in to additional content.
+						a.btn.btn-outline-success.btn-sm(href='http://www.jquery2dotnet.com/') Continue reading
+					img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/nature' style='width: 200px; height: 250px;')
+		.row
+			.col-md-6
+			.card.border-primary.flex-md-row.mb-4.shadow-sm.h-md-250
+				.card-body.d-flex.flex-column.align-items-start
+					strong.d-inline-block.mb-2.text-primary World
+					h6.mb-0
+						a.text-dark(href='#') 40 Percent of People Can&rsquo;t Afford Basics
+					.mb-1.text-muted.small Nov 12
+					p.card-text.mb-auto
+						| This is a wider card with supporting text below as a natural lead-in to additional content.
+					a.btn.btn-outline-primary.btn-sm(role='button' href='http://www.jquery2dotnet.com/') Continue reading
+				img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/arch' style='width: 200px; height: 250px;')
+			.col-md-6
+			.card.border-success.flex-md-row.mb-4.shadow-sm.h-md-250
+				.card-body.d-flex.flex-column.align-items-start
+					strong.d-inline-block.mb-2.text-success Health
+					h6.mb-0
+						a.text-dark(href='#') Food for Thought: Diet and Brain Health
+					.mb-1.text-muted.small Nov 11
+					p.card-text.mb-auto
+						| This is a wider card with supporting text below as a natural lead-in to additional content.
+					a.btn.btn-outline-success.btn-sm(href='http://www.jquery2dotnet.com/') Continue reading
+				img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/nature' style='width: 200px; height: 250px;')
+		.row
+			.col-md-6
+				.card.text-white.bg-primary.flex-md-row.mb-4.shadow-sm.h-md-250
+					.card-body.d-flex.flex-column.align-items-start
+						strong.d-inline-block.mb-2.text-white World
+						h6.mb-0
+							a.text-white(href='#') 40 Percent of People Can&rsquo;t Afford Basics
+						.mb-1.text-white-50.small Nov 12
+						p.card-text.mb-auto
+							| This is a wider card with supporting text below as a natural lead-in to additional content.
+						a.btn.btn-outline-light.btn-sm(role='button' href='http://www.jquery2dotnet.com/') Continue reading
+					img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/arch' style='width: 200px; height: 250px;')
+			.col-md-6
+			.card.text-white.bg-success.flex-md-row.mb-4.shadow-sm.h-md-250
+				.card-body.d-flex.flex-column.align-items-start
+					strong.d-inline-block.mb-2.text-white Health
+					h6.mb-0
+						a.text-white(href='#') Food for Thought: Diet and Brain Health
+					.mb-1.text-white-50.small Nov 11
+					p.card-text.mb-auto
+						| This is a wider card with supporting text below as a natural lead-in to additional content.
+					a.btn.btn-outline-light.btn-sm(href='http://www.jquery2dotnet.com/') Continue reading
+				img.card-img-right.flex-auto.d-none.d-lg-block(alt='Thumbnail [200x250]' src='//placeimg.com/250/250/nature' style='width: 200px; height: 250px;')
+		//.row
+			.col-md-4
+				.card.mb-4
+					img.card-img-top(src='../images/buroProfiles/sidonie.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-outline-dark.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+			.col-md-4
+				.card.mb-4.border-dark
+					img.card-img-top(src='../images/buroProfiles/stephanie.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-dark.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+			.col-md-4
+				.card.mb-4.text-white.bg-dark
+					img.card-img-top(src=src='../images/buroProfiles/florentine.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-outline-light.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+		//.row
+			.col-md-4
+				.card.mb-4
+					img.card-img-top(src='../images/buroProfiles/marie_catherine.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-outline-dark.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+			.col-md-4
+				.card.mb-4.border-dark
+					img.card-img-top(src='../images/buroProfiles/clarisse.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-dark.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+			.col-md-4
+				.card.mb-4.text-white.bg-dark
+					img.card-img-top(src=src='../images/buroProfiles/sidonie.jpg' alt='Card image cap' width='400', height='450')
+					.card-body
+						h5.card-title Card title
+						p.card-text
+							| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+						a.btn.btn-outline-light.btn-sm(href='http://www.jquery2dotnet.com/') Go somewhere
+		h3.mt-3.pb-3.mb-4.font-italic.border-bottom
+			| Image overlays
+		.row
+			.col-md-8
+				.card.mb-4.bg-dark.text-white
+					img.card-img(src='//placeimg.com/780/270/any' alt='Card image')
+					.card-img-overlay
+					h5.card-title Card title
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						p.card-text Last updated 3 mins ago
+			.col-md-4
+				.card.mb-4.bg-dark.text-white
+					img.card-img(src='//placeimg.com/250/180/any' alt='Card image')
+					.card-img-overlay
+						h5.card-title Card title
+						p.card-text
+							| This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						p.card-text Last updated 3 mins ago
+		h3.mt-3.pb-3.mb-4.font-italic.border-bottom
+			| Social Cards
+		.row
+			.col-md-3
+				.card.mb-4
+					.social-card-header.align-middle.text-center.bg-facebook
+						i.fab.fa-facebook-square
+					.card-body.text-center
+						.row
+							.col.border-right
+								i.far.fa-thumbs-up.text-facebook
+								span.text-muted Like
+								.font-weight-bold 12K
+							.col
+								i.fas.fa-share-alt.text-facebook
+								span.text-muted Share
+								.font-weight-bold 10K
+			.col-md-3
+				.card.mb-4
+					.social-card-header.align-middle.text-center.bg-google-plus
+						i.fab.fa-google-plus-square
+					.card-body.text-center
+					.row
+						.col.border-right
+							i.fab.fa-google-plus-g.text-google-plus
+							span.text-muted Like
+							.font-weight-bold 12K
+						.col
+							i.fas.fa-share-alt.text-google-plus
+							span.text-muted Share
+							.font-weight-bold 10K
+			.col-md-3
+				.card.mb-4
+					.social-card-header.align-middle.text-center.bg-twitter
+						i.fab.fa-twitter-square
+					.card-body.text-center
+					.row
+						.col.border-right
+							i.fab.fa-twitter.text-twitter
+							span.text-muted Tweet
+							.font-weight-bold 12K
+						.col
+							i.fas.fa-share-alt.text-twitter
+							span.text-muted Share
+							.font-weight-bold 10K
+			.col-md-3
+				.card.mb-4
+					.social-card-header.align-middle.text-center.bg-pinterest
+						i.fab.fa-pinterest-square
+					.card-body.text-center
+					.row
+						.col.border-right
+							i.fab.fa-pinterest-p.text-pinterest
+							span.text-muted Pin
+							.font-weight-bold 12K
+						.col
+							i.fas.fa-share-alt.text-pinterest
+							span.text-muted Share
+							.font-weight-bold 10K
+		h3.mt-3.pb-3.mb-4.font-italic.border-bottom
+			| More Cards
+		.row
+			.col-md-4
+				.card
+					img.card-img-top(src='//placeimg.com/280/180/tech' alt='Card image cap')
+					.card-body
+						h5.card-title.border-bottom.pb-3
+							| Card title 
+							a.float-right.d-inline-flex.share(href='#')
+								i.fas.fa-share-alt.text-primary
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+					a.float-right(href='#')
+						| Read more 
+						i.fas.fa-angle-double-right
+			.col-md-4
+				.card
+					img.card-img-top(src='//placeimg.com/280/180/tech' alt='Card image cap')
+					.card-body
+						h5.card-title.border-bottom.pb-3
+							| Card title 
+							a.float-right.btn.btn-sm.btn-info.d-inline-flex.share(href='#')
+								i.fas.fa-share-alt
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+					a.btn.btn-sm.btn-info.float-right(href='#')
+						| Read more 
+						i.fas.fa-angle-double-right
+			.col-md-4
+				.card.bg-light
+					img.card-img-top(src='//placeimg.com/280/180/tech' alt='Card image cap')
+					.card-body
+						h5.card-title.border-bottom.pb-3
+							| Card title 
+							a.float-right.btn.btn-sm.btn-info.d-inline-flex.share(href='#')
+								i.fas.fa-share-alt
+					p.card-text
+						| Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+					a.btn.btn-sm.btn-info.float-right(href='#')
+						| Read more 
+						i.fas.fa-angle-double-right
+		hr
+		a.mx-auto.pb-3.text-center(href='http://www.jquery2dotnet.com/')
+			img.rounded.mx-auto.d-block(alt='jQuery 2 DotNet' height='52px;' src='http://1.bp.blogspot.com/-z27K-NYYSi4/Vsg9Mdl1A_I/AAAAAAAAEbo/SbDbMENIiVQ/s1600-r/jQuery2DotNet.png' style='display: block' width='208px; ')
+
+
+		// START THE FEATURETTES
+		hr.featurette-divider
+		.container.marketing
+			.row.featurette
+				.col-md-7
+					h.featurette-heading
+						| Notre premier barbecue. 
+						span.text-muted C'etait super.
+					p.lead
+						| Rassembler est notre mission première. Nous remerçions tous ceux qui étaient présents. Ça a été un plaisir de vous revoir en bonne santé. Que le SEIGNEUR te garde. 
+				.col-md-5
+					img.featurette-image.img-responsive.center-block(src='../images/featurette1.jpg', alt='Generic placeholder image', width='550', height='600')
+			hr.featurette-divider
+			.row.featurette
+				.col-md-5.order-md-3
+					h2.featurette-heading
+						| Chez nous au pays. 
+						span.text-muted La nostalgie des anciens temps.
+					p.lead
+						| Le Bengué est dur, loin de nos familles, nous nous sommes reconstruits. Bonnivoire veux t' avoir comme famille, pour partager ensemble les bons moments. Mais aussi les moins bons pour que ta tristesse soit plus légère. Rejoins le mouvement ... 
+				.col-md-7.order-md-1
+					img.featurette-image.img-responsive.center-block(src='../images/featurette2.jpg', alt='Generic placeholder image', width='550', height='450')
+			hr.featurette-divider
+			.row.featurette
+				.col-md-7
+					h2.featurette-heading
+						| Abidjan la belle. 
+						span.text-muted Montrons notre pays à ceux qui nous sous estiment.
+					p.lead
+						| C' est environ 4.4 Millions d'habitants sur 422 km2, havre de développement bordé par la lagune ébrié. Nous sommes fièr(e)s.
+				.col-md-5
+					img.featurette-image.img-responsive.center-block(src='../images/featurette3.jpg', alt='Generic placeholder image')
+			//hr.featurette-divider
+			// /END THE FEATURETTES
+	hr.featurette-divider#bonnIvoire
+	.section.page-section
+		.container
+					.row
+						.col-md-8.col-md-offset-2
+							.heading
+							h3
+								span 
+									font(color= "#009E60") #{__('ASSOCIATION_IVOIRIENS_BONN')} 
+	.section#message.page-section
+		hr
+		.container
+			
+			.row
+				.col-sm-2
+					p
+						a.btn(data-toggle='collapse' href='#collapse_promesse' role='button' aria-expanded='false' aria-controls='collapse_promesse' style={background:"#F77F00 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_PROMESSE_TITRE')}
+					#collapse_promesse.collapse
+						.card.card-body
+							| #{__('BONNIVOIRE_PROMESSE_MESSAGE')}
+					
+				.col-sm-10
+					p
+						a.btn.btn-outline-success(data-toggle='collapse' href='#collapse1' role='button' aria-expanded='false' aria-controls='collapse1' style={background:"#009E60 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_HISTOIRE_TITRE')}
+					#collapse1.collapse
+						.card.card-body
+							| #{__('BONNIVOIRE_HISTOIRE_MESSAGE')}					
+				.col-sm-7
+					p
+						//a.btn.btn-outline-success.btn-sm(href='#collapse2') Détails
+							| Le parcours de bonnivoire
+						a.btn(data-toggle='collapse' href='#collapse2' role='button' aria-expanded='false' aria-controls='collapse2' style={background:"#009E60 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_PARCOURS_TITRE')}
+					#collapse2.collapse
+						.card.card-body
+							| #{__('BONNIVOIRE_PARCOURS_MESSAGE')}
+
+					
+				.col-sm-3
+					p
+						a.btn(data-toggle='collapse' href='#collapse_lesPresi' role='button' aria-expanded='false' aria-controls='collapse_lesPresi' style={background:"#F77F00 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_PRECURSEURS')} 
+					#collapse_lesPresi.collapse
+						.card.card-body
+							#accordion
+								.card
+									#headingOne.card-header(style={background:"#009E60 ",color: "#ffffffff"})
+										h5.mb-0
+											button.btn.btn-link(data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne' )
+												font(color= "#ffffffff") 
+													| #{__('BONNIVOIRE_PRECURSEURS_YEBO')} 
+									#collapseOne.collapse.show(aria-labelledby='headingOne' data-parent='#accordion')
+										.card-body
+											| #{__('BONNIVOIRE_PRECURSEURS_YEBO_TEXT')}
+								.card
+									#headingTwo.card-header(style={background:"#009E60 ",color: "#ffffffff"})
+										h5.mb-0
+											button.btn.btn-link.collapsed(data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+												font(color= "#ffffffff") 
+													| #{__('BONNIVOIRE_PRECURSEURS_DJOLOKOME')}
+									#collapseTwo.collapse(aria-labelledby='headingTwo' data-parent='#accordion')
+										.card-body
+											| #{__('BONNIVOIRE_PRECURSEURS_DJOLOKOME_TEXT')}
+								.card
+									#headingThree.card-header(style={background:"#009E60 ",color: "#ffffffff"})
+										h5.mb-0
+											button.btn.btn-link.collapsed(data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+												font(color= "#ffffffff") 
+													| #{__('BONNIVOIRE_PRECURSEURS_ABLE')} 
+									#collapseThree.collapse(aria-labelledby='headingThree' data-parent='#accordion')
+										.card-body
+											| #{__('BONNIVOIRE_PRECURSEURS_ABLE_TEXT')} 
+						
+
+				.col-sm-2
+					p
+						a.btn.btn-outline-success(data-toggle='collapse' href='#collapse_apolitique' role='button' aria-expanded='false' aria-controls='collapse_apolitique' style={background:"#009E60 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_APOLITIQ')}
+					#collapse_apolitique.collapse
+						.card.card-body
+							dl
+								dt #{__('BONNIVOIRE_APOLITIQ_MESSAGE')}
+								dd
+									| #{__('BONNIVOIRE_APOLITIQ_MESSAGE_1')}
+			.row
+				.col-sm-4
+					p
+						a.btn(data-toggle='collapse' href='#collapse_parcours' role='button' aria-expanded='false' aria-controls='collapse_parcours' style={background:"#F77F00 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_PARCOURS_OBJECTIFS')}
+					#collapse_parcours.collapse
+						.card.card-body
+								| #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE')}
+										
+								ul
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_1')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_2')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_3')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_4')}
+									
+								| #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_5')}
+								ul
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_6')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_7')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_8')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_9')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_10')}
+									li #{__('BONNIVOIRE_PARCOURS_OBJECTIFS_MESSAGE_11')}
+					
+				.col-sm-2
+					p
+						a.btn(data-toggle='collapse' href='#collapse_laic' role='button' aria-expanded='false' aria-controls='collapse_laic' style={background:"#009E60 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_LAIC')}
+					#collapse_laic.collapse
+						.card.card-body
+							dl
+								dt #{__('BONNIVOIRE_LAIC')}:
+								dd
+									| #{__('BONNIVOIRE_LAIC_MESSAGE')}
+					
+				.col-sm-4
+					p
+						a.btn(data-toggle='collapse' href='#collapse_smart' role='button' aria-expanded='false' aria-controls='collapse_smart' style={background:"#F77F00 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_SMART')}
+					#collapse_smart.collapse
+						.card.card-body
+							dl
+								dt #{__('BONNIVOIRE_SMART_MESSAGE')}
+								dd
+									| #{__('BONNIVOIRE_SMART_MESSAGE_1')}
+								ul
+									li 
+										strong S: &nbsp;
+										| #{__('BONNIVOIRE_SMART_MESSAGE_GENERIC')} &nbsp;
+										strong #{__('BONNIVOIRE_SMART_MESSAGE_S')}
+									li 
+										strong M: &nbsp;
+										| #{__('BONNIVOIRE_SMART_MESSAGE_GENERIC')} &nbsp;
+										strong #{__('BONNIVOIRE_SMART_MESSAGE_M')}
+									li 
+										strong A: &nbsp;
+										| #{__('BONNIVOIRE_SMART_MESSAGE_GENERIC')} &nbsp;
+										strong #{__('BONNIVOIRE_SMART_MESSAGE_A')}
+									li 
+										strong R: &nbsp;
+										| #{__('BONNIVOIRE_SMART_MESSAGE_GENERIC')} &nbsp;
+										strong #{__('BONNIVOIRE_SMART_MESSAGE_R')}
+									li 
+										strong T: &nbsp;
+										| #{__('BONNIVOIRE_SMART_MESSAGE_GENERIC')} &nbsp;
+										strong #{__('BONNIVOIRE_SMART_MESSAGE_T')}					
+				.col-sm-2
+					p
+						a.btn(data-toggle='collapse' href='#collapse_transparence' role='button' aria-expanded='false' aria-controls='collapse_transparence' style={background:"#009E60 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_TRANSPARENCE')}
+						//	|Transparence
+					#collapse_transparence.collapse
+						.card.card-body
+							| #{__('BONNIVOIRE_TRANSPARENCE_MESSAGE')}
+					
+				.col-sm-3
+					
+				.col-sm-5
+					p
+						a.btn(data-toggle='collapse' href='#collapse_confidentialite' role='button' aria-expanded='false' aria-controls='collapse_confidentialite' style={background:"#F77F00 ",color: "#ffffffff"})
+							| #{__('BONNIVOIRE_CONFIDENTIALITE')}
+					#collapse_confidentialite.collapse
+						.card.card-body
+							| #{__('BONNIVOIRE_CONFIDENTIALITE_MESSAGE')}
+				.col-sm-2
+					
+				.col-sm-2
+
+	
+	hr.featurette-divider
+	section#about
+		.container
+			.row
+				.col-md-8.col-md-offset-2
+					.heading
+					h1
+						span 
+							font(color="#F77F00")  #{__('FORMIDABLE_EQUIPE')}
+						//Notre formidable équipe
+					.sub-heading
+					p
+						h1 
+						strong
+							font(color="#009E60")  #{__('FORMIDABLE_EQUIPE_MESSAGE')}
+						//Nous travaillons pour te satisfaire. Rejoins vite le mouvement....
+			hr.featurette-divider
+			h1#about_us
+				//.animated.fadeInLeft NOS EXPERTS
+				//.animated.fadeInRight SCIENTIFIQUES
+				//https://bootsnipp.com/snippets/PD3m1
+			.col-md-12
+				#blogCarousel.carousel.slide(data-ride='carousel')
+					ol.carousel-indicators
+						li.active(data-target='#blogCarousel' data-slide-to='0')
+						li(data-target='#blogCarousel' data-slide-to='1')
+						// Carousel items
+					.carousel-inner
+						.carousel-item.active 
+							.row
+								.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/stephanie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_STEPHANIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_STEPHANIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								//.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/sidonie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_SIDONIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_SIDONIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/clarisse.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_CLARISSE')}
+											span.post #{__('FORMIDABLE_EQUIPE_CLARISSE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								//.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/marie_catherine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_MARIE_CAT')}
+											span.post #{__('FORMIDABLE_EQUIPE_MARIE_CAT_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+						//.carousel-item
+							.row
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/florentine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_FLORENTINE')}
+											span.post #{__('FORMIDABLE_EQUIPE_FLORENTINE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/clarisse.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_CLARISSE')}
+											span.post #{__('FORMIDABLE_EQUIPE_CLARISSE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/stephanie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_STEPHANIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_STEPHANIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/sidonie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_SIDONIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_SIDONIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+						//.carousel-item
+							.row
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/marie_catherine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_MARIE_CAT')}
+											span.post #{__('FORMIDABLE_EQUIPE_MARIE_CAT_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/stephanie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_STEPHANIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_STEPHANIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/clarisse.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_CLARISSE')}
+											span.post #{__('FORMIDABLE_EQUIPE_CLARISSE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/florentine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_FLORENTINE')}
+											span.post #{__('FORMIDABLE_EQUIPE_FLORENTINE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+						//.carousel-item
+							.row
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/sidonie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_SIDONIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_SIDONIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/florentine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_FLORENTINE')}
+											span.post #{__('FORMIDABLE_EQUIPE_FLORENTINE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/marie_catherine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_MARIE_CAT')}
+											span.post #{__('FORMIDABLE_EQUIPE_MARIE_CAT_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/stephanie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_STEPHANIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_STEPHANIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								
+						//.carousel-item
+							.row
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/clarisse.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_CLARISSE')}
+											span.post #{__('FORMIDABLE_EQUIPE_CLARISSE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/marie_catherine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_MARIE_CAT')}
+											span.post #{__('FORMIDABLE_EQUIPE_MARIE_CAT_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/florentine.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_FLORENTINE')}
+											span.post #{__('FORMIDABLE_EQUIPE_FLORENTINE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+								.col-lg-3.col-md-6.col-sm-6
+									.our-team
+										.pic
+											img(src='../images/buroProfiles/stephanie.jpg')
+										.team-content
+											h3.title #{__('FORMIDABLE_EQUIPE_STEPHANIE')}
+											span.post #{__('FORMIDABLE_EQUIPE_STEPHANIE_ROLE')}
+										ul.social
+											li
+												a.fa.fa-envelope(href='#contact')
+				
+	hr.featurette-divider
+	.card
+		button.btn(type='button' data-toggle='collapse' data-target='#demo' style={background:"#009E60 ",color: "#ffffffff"})
+			h3 #{__('PROJET_AREA')}
+	hr
+	section#projects
+		.container
+			.row
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.image-grid-cover(style='background-image: url(../images/contact_img.jpg)')
+						a.image-grid-clickbox(href='/projets/africa/#projectDecouvrirCI')
+						a.cover-wrapper(href='/projets/africa/#projectDecouvrirCI') #{__('PROJET_AREA_DECOUVRIR_CI')}
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.entry-cover.image-grid-cover.has-image(style='background-image: url(../images/democracy.jpg);')
+						a.image-grid-clickbox(href='/projets/bonn/#projectDemocratie')
+						a.cover-wrapper(href='/projets/bonn/#projectDemocratie') #{__('PROJET_AREA_DEMOCRATIE')}
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.entry-cover.image-grid-cover.has-image(style='background-image: url(../images/cooperative.jpg);')
+						a.image-grid-clickbox(href='/projets/africa/#projectCooperativeDeFemmes')
+						a.cover-wrapper(href='/projets/africa/#projectCooperativeDeFemmes') #{__('PROJET_AREA_COOPERATIVE_FEMMES')}
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.entry-cover.image-grid-cover.has-image(style='background-image: url(../images/projet_environnement.jpg);')
+						a.image-grid-clickbox(href='/projets/africa/#projectSauverPlanete')
+						a.cover-wrapper(href='/projets/africa/#projectSauverPlanete') #{__('PROJET_AREA_PLANETE')}
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.entry-cover.image-grid-cover.has-image(style='background-image: url(../images/children-492554_1920.jpg);')
+						a.image-grid-clickbox(href='/projets/bonn/#projectEnfants')
+						a.cover-wrapper(href='/projets/bonn/#projectEnfants') #{__('PROJET_AREA_ENFANTS')}
+				.col-12.col-sm-6.col-md-4.image-grid-item
+					.entry-cover.image-grid-cover.has-image(style='background-image: url(../images/african-2726208_1920.jpg);')
+						a.image-grid-clickbox(href='/projets/bonn/#projectFemmes')
+						a.cover-wrapper(href='/projets/bonn/#projectFemmes') #{__('PROJET_AREA_FEMMES')} 	
+
+				//hr.featurette-divider
+			//.container-fluid
+				button.btn(type='button' data-toggle='collapse' data-target='#demo' style={background:"#009E60 ",color: "#ffffffff"})
+					h3 #{__('PROJET_AREA')}
+			
+		//section#about
+				//#projectsTest.conatainer-fluid
+					.row
+						.col-sm
+							#projects.container
+								img.image(src='../images/contact_img.jpg' alt='Avatar')
+								.overlay
+									.details
+										.content
+											.h2
+												font(color= "#ffffff") #{__('PROJET_AREA_DECOUVRIR_CI')}
+											p
+												font(color= "#ffffff")  #{__('PROJET_AREA_DECOUVRIR_CI_TEXTE')}
+											p
+												a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+
+						.col-sm
+							#projects.container
+								img.image(src='../images/democracy.jpg' alt='Avatar' )
+								.overlay
+									.details
+											.h2 
+												font(color= "#ffffff") #{__('PROJET_AREA_DEMOCRATIE')}
+											p
+												font(color= "#ffffff") #{__('PROJET_AREA_DEMOCRATIE_TEXTE')}
+											p
+												a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+						.col-sm
+							#projects.container
+								img.image(src='../images/cooperative.jpg' alt='Avatar')
+								.overlay
+										.content
+											.h2 
+												font(color= "#ffffff") #{__('PROJET_AREA_COOPERATIVE_FEMMES')}
+											p
+												font(color= "#ffffff") #{__('PROJET_AREA_COOPERATIVE_FEMMES_TEXTE')}
+											p
+												a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+					//.column
+						#projects.container
+							img.image(src='../images/contact_img.jpg' alt='Avatar')
+							.overlay
+								.text Hello World
+					//.column
+						.card
+							h3 Card 4
+							p Some text
+							p Some text
+			//.container-fluid
+				.jumbotron(style='background-color: ##0000FF')
+					p  Nos Projets
+			//#projects.container
+				img.image(src='../images/contact_img.jpg' alt='Avatar')
+				.overlay
+					.text Hello World
+
+		//#projets.container-fluid
+			.row
+				.col-sm
+					.box
+						.imgBox
+							img(src='../images/contact_img.jpg')
+						.details
+							.content
+								h2 #{__('PROJET_AREA_DECOUVRIR_CI')}
+								p
+									| #{__('PROJET_AREA_DECOUVRIR_CI_TEXTE')}
+								p
+									a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+						
+				.col-sm
+					.box
+						.imgBox
+							img(src='../images/democracy.jpg')
+						.details
+							.content
+								h2 #{__('PROJET_AREA_DEMOCRATIE')}
+								p
+									| #{__('PROJET_AREA_DEMOCRATIE_TEXTE')}
+								p
+									a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+				.col-smd
+					.box
+						.imgBox
+							img(src='../images/cooperative_2.jpg')
+						.details
+							.content
+								h2 #{__('PROJET_AREA_COOPERATIVE_FEMMES')}
+								p
+									| #{__('PROJET_AREA_COOPERATIVE_FEMMES_TEXTE')}
+								p
+									a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+				.col-sm
+					.box
+						.imgBox
+							img(src='../images/projet_environnement.jpg')
+						.details
+							.content
+								h2 #{__('PROJET_AREA_PLANETE')}
+								p
+									|  #{__('PROJET_AREA_PLANETE_MESSAGE')}
+								p
+									a.btn.btn-primay(href='/projets', style={background:"#009E60 ",color: "#ffffff"}, role='button') #{__('DETAILS_BUTTON')} »
+					
+		hr.featurette-divider
+		.section#contact.page-section
+			form#contact-form(method="POST" action="/" role="form" enctype="application/x-www-form-urlencoded")
+				.messages
+					.controls
+						.container
+							.row
+								.col-lg-8
+									.row
+										.col-md-6
+											.form-group
+											label(for="form_name") 
+												font(color= "#FFFFFF") #{__('CONTACT_PRENOM')}
+											input#form_name.form-control(type="text" name="surname" placeholder="------- *" required="required" data-error="Prenom requis.")
+											.help-block.with-errors
+										.col-md-6
+											.form-group
+											label(for="form_lastname") 
+												font(color= "#FFFFFF") #{__('CONTACT_NOM')}
+											input#form_lastname.form-control(type="text" name="name" placeholder="------- *" required="required" data-error="Nom de Famille requis.")
+											.help-block.with-errors
+									.row
+										.col-md-6
+											.form-group
+											label(for="form_email") 
+												font(color= "#FFFFFF") Email *
+											input#form_email.form-control(type="from" name="email" placeholder="------- *" required="required" data-error="Email valide requis.")
+											.help-block.with-errors
+										.col-md-6
+											.form-group
+											label(for="form_need") 
+												font(color= "#FFFFFF") #{__('CONTACT_AIDEZ')}
+											select#form_need.form-control(name="subject"  required="required" data-error="Comment vous aider? Choisir.")
+												option(value="") 
+												option(value="Reporter un évènement") #{__('CONTACT_AIDEZ_ANNONCE')}
+												//Annoncer un évènement
+												option(value="Demande urgente d'aide") #{__('CONTACT_AIDEZ_AIDE')}
+												//Demande urgente d'aide
+												option(value="Demande urgente d'aide") #{__('CONTACT_AIDEZ_COLOMBE')}
+												//Question à Colombe
+												option(value="Proposition d'idéese") #{__('CONTACT_AIDEZ_IDEE')}
+												//Proposition d'idées
+												option(value="Autres") #{__('CONTACT_AIDEZ_AUTRE')}
+												//Autres
+											.help-block.with-errors
+									hr
+									.row
+										.col-md-12
+											.form-group
+												label(for="form_message") 
+													font(color= "#FFFFFF") #{__('CONTACT_MESSAGE')}
+												textarea#form_message.form-control(name="message" placeholder="------- *" rows="7" required="required" data-error="Laissez nous un Message.")
+											.help-block.with-errors
+										<br/>
+										.col-md-12
+											input.btn.btn-success.btn-send(type="submit" value="Send", style="background-color:#009E60")
+										hr
+										.row
+										.help-block.with-errors
+						hr
+
+		hr.featurette-divider
+
+		// FOOTER
+	section#footer_index.container
+		
+		footer
+			p.pull-right
+				script(type='text/javascript').
+					//<![CDATA[
+					var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+					document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+				//]]>
+				script(language='JavaScript' type='text/javascript').
+					TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+			
+			p
+				strong
+					
+					a(href='#contact', style={color: "#009E60"})
+						span.glyphicon.glyphicon-envelope &nbsp;
+					font(color="#009E60") Bonnivoire-ev - &nbsp;
+					font(color="#009E60") Postfach 7408 - 53074 Bonn
+			p
+				font(color="#F77F00") © 2019 bonnivoire-ev &nbsp;
+				a(href='/about', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='/about', style={color: "#F77F00"}) - Terms
+
+
+.alert.text-center.cookiealert(role='alert')
+	b We use cookies<br/>
+	|  &#xF36A; We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content, to analyze our website traffic, and to understand where our visitors are coming from. By browsing our website, you consent to our use of cookies and other tracking technologies.. 
+	a(href='https://cookiesandyou.com/' target='_blank') Learn more
+	button.btn.btn-primary.btn-sm.acceptcookies(type='button' aria-label='Close')
+		| I agree
+	// END Bootstrap-Cookie-Alert
+	// JAVASCRIPT
+	// Only for the demo
+	//script.
+		for (var i = 1; i <= 150; i++)
+		document.querySelector("#fillme").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+		// Include cookiealert script
+	script(src='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js')
+
+// Nav bar 
+	nav.navbar.navbar-expand-md.navbar-light.bg-light
+	a.navbar-brand(href='#') Brand
+	button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse')
+		span.navbar-toggler-icon
+	#navbarCollapse.collapse.navbar-collapse.justify-content-between
+		.navbar-nav
+		a.nav-item.nav-link.active(href='#') Home
+		a.nav-item.nav-link(href='#') Profile
+		.nav-item.dropdown
+			a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown') Messages
+			.dropdown-menu
+			a.dropdown-item(href='#') Inbox
+			a.dropdown-item(href='#') Sent
+			a.dropdown-item(href='#') Drafts
+		form.form-inline
+		.input-group
+			input.form-control(type='text' placeholder='Search')
+			.input-group-append
+			button.btn.btn-secondary(type='button')
+				i.fa.fa-search
+		.navbar-nav
+
+// cookies
+//		doctype html
+		head
+			meta(charset='utf-8')
+			meta(http-equiv='X-UA-Compatible' content='IE=edge')
+			meta(name='viewport' content='width=device-width, initial-scale=1')
+			title Bootstrap cookie alert
+			// Bootstrap 4.1.1
+			link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css')
+			// cookiealert styles
+			link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+		.container
+			.card(style='margin-top: 70px')
+				.card-body
+					#fillme
+			// START Bootstrap-Cookie-Alert
+		.alert.text-center.cookiealert(role='alert')
+			b Do you like cookies?
+			|  &#xF36A; We use cookies to ensure you get the best experience on our website. 
+			a(href='https://cookiesandyou.com/' target='_blank') Learn more
+			button.btn.btn-primary.btn-sm.acceptcookies(type='button' aria-label='Close')
+				| I agree
+			// END Bootstrap-Cookie-Alert
+			// JAVASCRIPT
+			// Only for the demo
+		script.
+			for (var i = 1; i <= 150; i++)
+			document.querySelector("#fillme").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+			// Include cookiealert script
+		script(src='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js')
+

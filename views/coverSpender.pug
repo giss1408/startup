@@ -1,0 +1,383 @@
+doctype html
+head
+	// Mobile Specific Meta
+	meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+	// Favicon
+	link(rel='shortcut icon' href='img/fav.png')
+	// Author Meta
+	meta(name='author' content="african projetcs culture organisation Côte d'ivoire")
+	// Meta Description
+	meta(name='description' content='')
+	// Meta Keyword
+	meta(name='keywords' content='')
+	// meta character set
+	meta(charset='UTF-8')
+
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+
+	// Site Title
+	title Bonnivoire e.V. Charity
+	link(href='https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700' rel='stylesheet')
+	
+	//	CSS
+	//	=============================================
+	link(rel='stylesheet' href='css/linearicons.css')
+
+	link(rel='stylesheet' href='./charity-colorlib/css/font-awesome.min.css')
+	link(rel='stylesheet' href='./charity-colorlib/css/magnific-popup.css')
+	link(rel='stylesheet' href='./charity-colorlib/css/nice-select.css')
+	link(rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+	link(rel='stylesheet' href='./charity-colorlib/css/bootstrap.css')
+	link(rel='stylesheet' href='./charity-colorlib/css/main.css')
+// Start Header Area
+header.default-header
+	.container
+		.header-wrap
+			.header-top.d-flex.justify-content-between.align-items-center
+				.logo
+					a(href='/')
+						h4 
+							strong 
+								font(color="#009E60") bonnivoire e.V.
+						//img(src='./charity-colorlib/img/logo.png' alt='')
+				.main-menubar.d-flex.align-items-center
+					nav
+						a(href='#home' style={color: "#009E60"}) #{__('ACCUEIL')}
+						a(href='#project' style={color: "#009E60"}) #{__('PROJECTS')}
+						a(href='#about' style={color: "#009E60"}) #{__('NOUS_CONNAITRE')}
+						a(href='#donate' style={color: "#009E60"}) #{__('DONATION_FAIRE_UN_DON')}
+					.menu-bar
+						span.lnr.lnr-menu
+// End Header Area
+// start banner Area
+section#home.banner-area.relative
+	.overlay.overlay-bg
+	.container
+		.row.fullscreen.align-items-center.justify-content-start(style='height: 915px;')
+			.banner-content.col-lg-9.col-md-12
+				h1
+					| #{__('DONATION_SLOGAN_1')}
+					br
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; #{__('DONATION_SLOGAN_2')}
+				a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')}
+// End banner Area
+// Start callto Area
+section.callto-area.relative
+	.container
+		.row.d-flex.callto-wrap.justify-content-between.pt-40.pb-40
+			h3.text-white #{__('DONATION_DONNEZ-SVP')}
+			a.head-btn.head-btn2.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')}
+// End callto Area
+// Start project Area
+section#project.project-area.section-gap
+	.container
+		.row.d-flex.justify-content-center
+			.col-md-8.pb-80.header-text
+				h1 #{__('DONATION_EN_ATTENTE_AIDE')}	
+				//p
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+					br
+					|	labore  et dolore magna aliqua.
+		hr
+		.row
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/democracy.jpg' alt='' width='350', height='263')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')}
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_DEMOCRATIE')}	
+					p
+						| #{__('PROJET_AREA_DEMOCRATIE_TEXTE')}						 
+					a.text-uppercase(href='/projets/bonn#projectDemocratie') #{__('DETAILS_BUTTON')}
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/cooperative.jpg' alt='' width='350', height='263')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')} 
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_COOPERATIVE_FEMMES')}
+					p
+						| #{__('PROJET_AREA_COOPERATIVE_FEMMES_TEXTE')}
+					a.text-uppercase(href='/projets/africa#projectCooperativeDeFemmes') #{__('DETAILS_BUTTON')} 
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/children-492554_1920.jpg' alt='' width='350', height='263')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')}
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_ENFANTS')}
+					p
+						| #{__('PROJET_AREA_ENFANTS_TEXTE')}
+					a.text-uppercase(href='/projets/bonn#projectEnfants') #{__('DETAILS_BUTTON')} 
+		hr
+		.row
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image.img-fluid.d-block.mx-auto(src='../images/african-2726208_1920.jpg' alt='')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')}
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_FEMMES')} 
+					p
+						| #{__('PROJET_AREA_FEMMES_TEXTE')} 
+					a.text-uppercase(href='/projets/bonn#projectFemmes') #{__('DETAILS_BUTTON')}
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/projet_environnement.jpg' alt='' width='350', height='263')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')} 
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_PLANETE')}
+					p
+						| #{__('PROJET_AREA_PLANETE_MESSAGE')}
+					a.text-uppercase(href='/projets/africa#projectSauverPlanete') #{__('DETAILS_BUTTON')} 
+			.col-lg-4.col-md-4.project-wrap
+				.single-project
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/contact_img.jpg' alt='' width='350', height='263')
+							.content-details.fadeIn-bottom
+								a.head-btn.btn.text-uppercase(href='#donate') #{__('DONATION_FAIRE_UN_DON')} 
+				.details
+					a(href='#')
+						h2 #{__('PROJET_AREA_DECOUVRIR_CI')}
+					p
+						| #{__('PROJET_AREA_DECOUVRIR_CI_TEXTE')}
+					a.text-uppercase(href='/projets/africa#projectDecouvrirCI') #{__('DETAILS_BUTTON')} 
+		hr
+// End project Area
+// Start about Area
+section#about.about-area
+	.container-fluid
+		.row.d-flex.justify-content-end.align-items-center
+			.col-lg-6.col-md-12.about-left.no-padding
+				img.img-fluid(src='../images/akwaba_2019/akwaba_2019_09_15_16.jpg' alt='')
+			.col-lg-6.col-md-12.about-right
+				h1
+					| #{__('DONATION_ACCUEIL_MESSAGE_1')}  
+					br
+					| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;#{__('DONATION_ACCUEIL_MESSAGE_2')}
+				p
+				//	| inappropriate behavior is often laughed off as &ldquo;boys will be boys,&rdquo; women face higher conduct standards especially in the workplace. That&rsquo;s why it&rsquo;s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.
+				a.head-btn.head-btn2.btn.text-uppercase(href='/'  style={background:"#009E60 ",color: "#ffffffff"}) bonnivoire e.V. »
+				//button.primary-btn.mt-20.text-uppercase(style={background:"#009E60 ",color: "#ffffff"})
+					| learn more
+					span.lnr.lnr-arrow-right
+// End about Area
+// Start volunteer Area
+section.volunteer-area.section-gap
+	.container
+		.row.d-flex.justify-content-center
+			.col-md-8.pb-80.header-text
+				h1 #{__('DONATION_NOS_VOLONTAIRES')}
+				//p
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+					br
+					|	labore  et dolore magna aliqua.
+		.row
+			.col-lg-3.col-md-3.vol-wrap
+				.single-vol
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/buroProfiles/stephanie.jpg' alt='' width='250', height='280')
+							.content-details.fadeIn-bottom
+								h4 Stéphanie
+								//p
+									| inappropriate behavior
+			.col-lg-3.col-md-3.vol-wrap
+				.single-vol
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/buroProfiles/florentine.jpg' alt='' width='250', height='280')
+							.content-details.fadeIn-bottom
+								h4 Florentine
+								//p
+									| inappropriate behavior
+			.col-lg-3.col-md-3.vol-wrap
+				.single-vol
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/buroProfiles/marie_catherine.jpg' alt='' width='250', height='280')
+							.content-details.fadeIn-bottom
+								h4 Marie Catherine
+								//p
+									| inappropriate behavior
+			.col-lg-3.col-md-3.vol-wrap
+				.single-vol
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/buroProfiles/clarisse.jpg' alt='' width='370', height='280')
+							.content-details.fadeIn-bottom
+								h4 Clarisse
+								//p
+									| inappropriate behavior
+		hr
+		.row
+			.col-lg-3.col-md-3.vol-wrap
+				.single-vol
+					.content
+						a(href='#' target='_blank')
+							.content-overlay
+							img.content-image(src='../images/buroProfiles/sidonie.jpg' alt='' width='250', height='280')
+							.content-details.fadeIn-bottom
+								h4 Sidonie
+								//p
+									| inappropriate behavior
+// End volunteer Area
+// Start donate Area
+section#donate.donate-area.relative.section-gap
+	.overlay.overlay-bg
+	.container
+		.row.d-flex.justify-content-end
+			.col-lg-6.col-sm-12.pb-80.header-text
+				h1 #{__('DONATION_FAIRE_UN_DON')}
+				//p
+					| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
+					br
+					|  tempor incididunt ut labore  et dolore magna aliqua.
+		.row.d-flex.justify-content-center
+			//.col-lg-6.contact-left
+				.single-info
+					h4 Divided Evenly
+					p
+						| inappropriate behavior is often laughed off as &ldquo;boys will be boys,&rdquo; 
+						br
+						|  women face higher conduct women face higher conduct.
+				.single-info
+				h4 Transperancy All the Way
+					p
+						| inappropriate behavior is often laughed off as &ldquo;boys will be boys,&rdquo; 
+						br
+						|  women face higher conduct women face higher conduct.
+				.single-info
+					h4 Trustworthy
+					p
+						| inappropriate behavior is often laughed off as &ldquo;boys will be boys,&rdquo; 
+						br
+						|  women face higher conduct women face higher conduct.
+			.col-lg-6.contact-right
+				form#myForm.booking-form(action='')
+					.row 
+						.col-lg-12.d-flex.flex-column
+							select.app-select.form-control(name='type' required='')
+								option(data-display='') #{__('DONATION_DON_POUR_PROJET_TEXTE')}
+								option(value='1') #{__('PROJET_AREA_DEMOCRATIE')}
+								option(value='2') #{__('PROJET_AREA_COOPERATIVE_FEMMES')}
+								option(value='3') #{__('PROJET_AREA_PLANETE')}
+								option(value='3') #{__('PROJET_AREA_ENFANTS')}
+								option(value='3') #{__('PROJET_AREA_FEMMES')}
+						.col-lg-6.d-flex.flex-column
+							input.form-control.mt-20(name='fname' placeholder=__('DON_ENTREZ_NOM') onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required='' type='text')
+						.col-lg-6.d-flex.flex-column
+							input.form-control.mt-20(name='email' placeholder=__('DON_ENTREZ_EMAIL') pattern='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required='' type='email')
+						.col-lg-12.d-flex.flex-column
+							input.form-control.mt-20(name='amound' placeholder=__('DON_MONTANT') onfocus="this.placeholder = ''" onblur="this.placeholder = 'Donation amount (USD)'" required='' type='text')
+							textarea.form-control.mt-20(name='message' placeholder=__('CONTACT_MESSAGE') onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required='')
+						.col-lg-12.d-flex.justify-content-end.send-btn
+							button.submit-btn.primary-btn.mt-20.text-uppercase(style={background:"#009E60 ",color: "#ffffff"})
+								| #{__('DONATION_FAIRE_UN_DON_EN_CONSTRUCTION')}
+								span.lnr.lnr-arrow-right
+						.alert-msg
+				p.payment-method
+				| We Accept :   
+				img(src='./charity-colorlib/img/payment.png' alt='')
+// End donate Area
+// start footer Area
+footer.footer-area.section-gap
+	section#footer_index.container
+		
+		footer
+			p.pull-right
+				script(type='text/javascript').
+					//<![CDATA[
+					var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+					document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+				//]]>
+				script(language='JavaScript' type='text/javascript').
+					TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+			
+			p
+				strong
+					
+					a(href='#contact', style={color: "#009E60"})
+						span.glyphicon.glyphicon-envelope &nbsp;
+					font(color="#009E60") Bonnivoire-ev - &nbsp;
+					font(color="#009E60") Postfach 7408 - 53074 Bonn
+			p
+				font(color="#F77F00") © 2019 bonnivoire-ev &nbsp;
+				a(href='/about', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='/about', style={color: "#F77F00"}) - Terms
+	.container
+		//.row.d-flex.flex-column.justify-content-center
+			ul.footer-menu
+				li
+					a(href='#home') Home
+				li
+					a(href='#project') Projects
+				li
+					a(href='#about') About
+				li
+					a(href='#donate') Donate
+			.footer-social
+				a(href='#')
+					i.fa.fa-facebook
+				a(href='#')
+					i.fa.fa-twitter
+				a(href='#')
+					i.fa.fa-dribbble
+				a(href='#')
+					i.fa.fa-behance
+			//p.footer-text.m-0
+				// Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+				| Copyright &copy;
+				script.
+				document.write(new Date().getFullYear());
+				|  All rights reserved | This template is made with 
+				i.fa.fa-heart-o(aria-hidden='true')
+				|  by 
+				a(href='https://colorlib.com' target='_blank') Colorlib
+				// Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+// End footer Area
+script(src='./charity-colorlib/js/vendor/jquery-2.2.4.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js' integrity='sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4' crossorigin='anonymous')
+script(src='./charity-colorlib/js/vendor/bootstrap.min.js')
+script(src='./charity-colorlib/js/jquery.ajaxchimp.min.js')
+script(src='./charity-colorlib/js/jquery.nice-select.min.js')
+script(src='./charity-colorlib/js/jquery.sticky.js')
+script(src='./charity-colorlib/js/parallax.min.js')
+script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+script(src='./charity-colorlib/js/jquery.magnific-popup.min.js')
+script(src='./charity-colorlib/js/main.js')

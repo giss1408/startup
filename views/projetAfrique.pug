@@ -1,0 +1,184 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+	title bonnivoire e.V
+	link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+	link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js')
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+	script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+	script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+		
+	// cookiealert styles
+	link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css')
+	link(href="/stylesheets/newIndex.css", rel="stylesheet")
+	link(href='/stylesheets/languages.min.css', rel="stylesheet")
+body
+	#mynavBar.nav.navbar.navbar-expand-lg.navbar-light.fixed-top(style="background-color: #009E60")
+		.container
+			a.navbar-brand(href='../../' style={color: "#ffffff"}) 
+				strong bonnivoire e.V
+			button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+			#navbarResponsive.collapse.navbar-collapse
+				ul.navbar-nav.ml-auto
+					li.nav-item.active
+						a.nav-link(href='/projets' style={color: "#009E60"})
+							strong #{__('PROJECTS')}
+							span.sr-only (current)
+					//li.nav-item.dropdown
+						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown'  aria-expanded='false' style={color: "#009E60"})
+							strong #{__('NOUS_CONNAITRE')}
+						.dropdown-menu(aria-labelledby='navbarDropdown')
+							a.dropdown-item(href='#bonnIvoire' style={color: "#009E60"}) Bonnivoire
+							a.dropdown-item(href='/message' style={color: "#009E60"}) Vision
+							a.dropdown-item(href='/adhesion' style={color: "#009E60"}) #{__('ADHERER')}
+							a.dropdown-item(href='#about' style={color: "#009E60"}) #{__('BUREAU')}
+							a.dropdown-item(href='/activites' style={color: "#009E60"}) #{__('ACTIVITES')}
+							a.dropdown-item(href='/necrologie' style={color: "#009E60"}) Nécrologie
+							.dropdown-divider
+							a.dropdown-item(href='/coverSpender' style={color: "#009E60"}) #{__('NOUS_SOUTENIR')}
+							a.dropdown-item(href='/projets' style={color: "#009E60"}) #{__('PROJECTS')}
+							a.dropdown-item(href='/gallery' style={color: "#009E60"}) #{__('PHOTO_GALLERIE')}
+					//li.nav-item
+						a.nav-link(href='/blog' style={color: "#009E60"}) 
+							strong Kongossa
+					//li.nav-item.dropdown
+						a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown'  aria-expanded='false' style={color: "#009E60"})
+							strong #{__('LIENS_UTILES')}
+						.dropdown-menu(aria-labelledby='navbarDropdown')
+							a.dropdown-item(href='https://ambaci.de/' style={color: "#009E60"}) #{__('AMBASSADE')}
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365658' style={color: "#009E60"}) #{__('LOI_IMMIGRATION')}
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365666' style={color: "#009E60"}) #{__('NATURALISATION')}
+							.dropdown-divider
+							a.dropdown-item(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/02-apprendre-travailler-artikel/1361114' style={color: "#009E60"}) #{__('TRAVAILLER_EN_ALLEMAGNE')} 
+							a.dropdown-item(href='https://www.deutschakademie.de/online-deutschkurs' style={color: "#009E60"}) #{__('APPRENDRE_ALLEMAND')}
+					li.nav-item
+						a.nav-link(href='#contact' style={color: "#009E60"}) 
+							strong #{__('CONTACT')}
+					//li
+						.btn-group.dropdown
+							button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+								span.lang-sm.lang-lbl-full(lang='fr')
+								caret
+							.dropdown-menu(aria-labelledby='dropdownMenuButton')
+								a.dropdown-item(href='/coverSpender')
+									span.lang-sm.lang-lbl-full(lang='de')
+									caret
+								a.dropdown-item(href='/coverSpender/coverSpender_en') 
+									span.lang-sm.lang-lbl-full(lang='en')
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+	//hr.featurette-divider
+	.container-fluid
+		.jumbotron(style='background-color: #FFFFFF')
+			//.row
+				.col-md-6(style="border-style: inset ;border:10px double #F77F00;")
+					h3 
+						font(color="#009E60") Notre motivation
+					p 
+					| Tout le monde se dit expert en la matière: aider l'afrique. Mûs de la bonne volonté d'aider dans le developpement et aussi dans la réduction de la pauvreté en afriques, les experts
+					| s'attaquent à un problème dont la complexité ne peut être appréhendée que par des natifs africains. De la concurrence des produits subventionnés venant d'europe,
+					| passant par la stagnation d'une économie qui ne rempli que les critères macroécoomiques de croissance à deux chiffres, les pays aficains peinent 
+					| à établir une référence mondiale dans quelque domaine que ce soit. Loin de nous l'idée que tout va mal en afrique et particulièrement en Côte d'ivoire, mais force est de constater que
+					| face aux manques dans presque tous les domaines, il ne faut pas être un genie pour prévoir un avenir peu radieux de la Côte d'ivoire dans le contexte de la mondialisation.
+					| Que doivent être les priorités pour un gouvernement? Construire les infrastructures ( routes, ponts, usines, hopitaux, écoles et universités), préalables au développement économique
+					| ou reverser les fruits de la croissance à sa population? La première solution est celle conduite par de nombreux gouvernemets sur le continent.
+					| Cela entraine un endettement des générations futures, et une croissance qui n'est pas sentie par la population. Notre motivation est de court-circuiter ce cercle vicieux du retard économique,
+					| avec nos maigres moyens en soutenent directement des coopératives de femmes choisies chaque année. Nous achetons des machines, des engrais, financçons l'irrigation des champs ...
+
+				.col-md-6(style="border-style: inset ;border:10px double #F77F00;")
+					h3 
+						font(color="#009E60") Notre but
+					p
+					| Notre but est de rentabiliser l'aide apportée et motiver les femmes à plus de professionalisme. L'aide est allouée sous forme de crédit sans intérêt sur 3 ans avec un remboursement de la moitié du montant alloué
+					| Ainsi l'argent peut faire son chemin et aider plus d'une coopéeative à la fois
+		
+		marquee(behavior='scroll' direction='left' scrollamount='4' style={background: "#F77F00"} overflow='hidden') 
+			p
+				strong
+					font(color= "#FFFFFF") #{__('MARQUEE_1')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFF") #{__('MARQUEE_2')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					font(color= "#FFFFFF") #{__('MARQUEE_3')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					font(color= "#FFFFFF") #{__('MARQUEE_4')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					font(color= "#FFFFFF") #{__('MARQUEE_5')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					font(color= "#FFFFFF") #{__('MARQUEE_6')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		// START THE FEATURETTES
+		hr.featurette-divider#projectCooperativeDeFemmes
+		.row.featurette
+			.col-md-7(style="border-style: inset ;border:10px double green;")
+				h2.featurette-heading
+					font(color="#009E60") #{__('PROJET_AREA_COOPERATIVE_FEMMES')} <br/>
+					span.text-muted 
+						font(color="#F77F00" size='4') #{__('PROJET_AREA_COOPERATIVE_FEMMES_TEXTE')}
+				//p.lead
+					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+				p.pull-right
+					a.btn.btn-outline-success.btn-sm(href='/coverSpender') #{__('DONATION_FAIRE_UN_DON')} »
+				//p.pull-left
+					a.btn.btn-outline-success.btn-sm(href='/message#convaincre2') #{__('DETAILS_BUTTON')} »
+			.col-md-5
+				img.featurette-image.img-responsive.center-block(style='border:10px double green;' src='../../images/cooperative.jpg', alt='Generic placeholder image', width='650', height='550')
+		hr.featurette-divider#projectDecouvrirCI
+		.row.featurette
+			.col-md-7.order-md-4(style="border-style: inset ;border:10px double green;")
+				h2.featurette-heading
+					font(color="#009E60") #{__('PROJET_AREA_DECOUVRIR_CI')} <br/>
+					span.text-muted 
+						font(color="#F77F00" size='4') #{__('PROJET_AREA_DECOUVRIR_CI_TEXTE')}
+				p.lead
+					iframe(width='800' height='400' src='https://www.youtube.com/embed/-SNKmXwO_n0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+					//iframe(width='800' height='400' src='https://www.youtube.com/embed/_VrWeJov7jM' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+			.col-md-5.order-md-2
+				img.featurette-image.img-responsive.center-block(style='border:10px double green;' src='../../images/contact_img.jpg', alt='Generic placeholder image', width='650', height='550')
+		hr.featurette-divider#projectSauverPlanete
+		.row.featurette
+			.col-md-7(style="border-style: inset ;border:10px double green;")
+				h2.featurette-heading
+					font(color="#009E60") #{__('PROJET_AREA_PLANETE')} <br/>
+					span.text-muted 
+						font(color='#F77F00' size="4") #{__('PROJET_AREA_PLANETE_MESSAGE')} 
+				p.pull-right
+					a.btn.btn-outline-success.btn-sm(href='/coverSpender') #{__('DONATION_FAIRE_UN_DON')} »
+				//p.pull-left
+					a.btn.btn-outline-success.btn-sm(href='/message#convaincre2') #{__('DONATION_FAIRE_UN_DON')} »
+				//p.lead
+					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+				
+			.col-md-5
+				img.featurette-image.img-responsive.center-block(style='border:10px double green;' src='../../images/projet_environnement.jpg', alt='Generic placeholder image', width='650', height='550')
+		hr.featurette-divider
+
+	section#footer_index.container
+		
+		footer
+			p.pull-right
+				script(type='text/javascript').
+					//<![CDATA[
+					var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+					document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+				//]]>
+				script(language='JavaScript' type='text/javascript').
+					TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+			
+			p
+				strong
+					
+					a(href='#contact', style={color: "#009E60"})
+						span.glyphicon.glyphicon-envelope &nbsp;
+					font(color="#009E60") Bonnivoire-ev - &nbsp;
+					font(color="#009E60") Postfach 7408 - 53074 Bonn
+			p
+				font(color="#F77F00") © 2019 bonnivoire-ev &nbsp;
+				a(href='/about', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='/about', style={color: "#F77F00"}) - Terms

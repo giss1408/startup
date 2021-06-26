@@ -1,0 +1,129 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+append styles
+	// Custom styles for this template
+	link(href='stylesheets/blog.css', rel='stylesheet')
+block body	
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				//ul.nav.navbar-nav
+					li
+						a(href='/about', style={color: "#FFFFFFFF"}) Relations amoureuses
+					li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) Conseils beauté
+					li
+						a(href='/about', style={color: "#FFFFFFFF"}) Conseils cuisine
+					li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+							//a.blog-nav-item(href='#') About
+	.container
+		.blog-header
+			h1.blog-title Les activités et sorties de Bonnivoire 
+			p.lead.blog-description 
+				font(color="#009E60") Bonnivoire organise des sorties, évenements, expositions.... pour grands et petits.
+		hr.featurette-divider
+		.section#agextra.page-section
+			.container
+				.container-fluid
+					.row.featurette
+						.col-md-5
+							h4.featurette-heading
+								strong
+									font(color="#F77F00") Assemblée générale extraordinaire.<br/> 
+								span.text-muted 
+									font(color="#F77F00") Le mot de la présidente.
+							p
+							//	| Rassembler est notre mission première. Nous remerçions tous ceux qui étaient présents. Ça a été un plaisir de vous revoir en bonne santé. Que le SEIGNEUR te garde. 
+						.col-md-7
+							img.featurette-image.img-responsive.center-block(src='../images/agextra.jpg', alt='Generic placeholder image')
+					p.pull-left
+							a(href='#', style={color: "#009E60"}) Haut de page	
+					<br/>
+					<br/>
+					<br/>
+					hr.featurette-divider
+					<br/>
+					<br/>
+			<br/>
+			.row.featurette#ausflug_1
+				.col-md-4.col-md-push-5
+					h4.featurette-heading
+						strong
+							font(color="#F77F00") Visite du park animalier de Rolandseck.<br/>
+						span.text-muted 
+							font(color="#F77F00") Un instant inoubliable en famille. Le mot de l'organisation.
+					p
+					//	| Le Bengué est dur, loin de nos familles, nous nous sommes reconstruits. Bonnivoire veux t' avoir comme famille, pour partager ensemble les bons moments. Mais aussi les moins bons pour que ta tristesse soit plus légère. Rejouints le mouvement ... 
+				.col-md-8.col-md-pull-7
+					img.featurette-image.img-responsive.center-block(src='../images/ausflug_1.jpg', alt='Generic placeholder image')
+			p.pull-right
+					a(href='#', style={color: "#009E60"}) Haut de page
+			
+	//.sidebar-module
+		h4 Archives
+			ol.list-unstyled
+				li
+					a(href='#') March 2014
+				li
+					a(href='#') February 2014
+				li
+							a(href='#') January 2014
+						li
+							a(href='#') December 2013
+						li
+							a(href='#') November 2013
+						li
+							a(href='#') October 2013
+						li
+							a(href='#') September 2013
+						li
+							a(href='#') August 2013
+						li
+							a(href='#') July 2013
+						li
+							a(href='#') June 2013
+						li
+							a(href='#') May 2013
+						li
+							a(href='#') April 2013
+				.sidebar-module
+					h4 Elsewhere
+					ol.list-unstyled
+						li
+							a(href='#') GitHub
+						li
+							a(href='#') Twitter
+						li
+						a(href='#') Facebook
+
+				
+			
+				
+	footer.blog-footer
+		p
+			font(color="#009E60") Les activités de bonnivoire  <br/> 
+			font(color="#F77F00") © 2019 bonnivoire-ev 
+				a(href='#', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='#', style={color: "#F77F00"}) -Terms
+		//	a(href='#') Privacy
+			|  · 
+			a(href='#') Terms
+	//	p
+			a(href='#') Back to top
+	block content

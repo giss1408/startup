@@ -1,7 +1,24 @@
 extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script(src='https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+
 append styles
 	// Custom styles for this template 
 	link(href="/stylesheets/carousel.css", rel="stylesheet")
+	//link(href='stylesheets/blog.css', rel='stylesheet')
+	link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css")
+	link(href='/stylesheets/languages.min.css', rel="stylesheet")
+	script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
+	script(src="//code.jquery.com/jquery-1.11.1.min.js")
+	script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
 block body
 	.navbar-wrapper
 		.container
@@ -13,106 +30,1289 @@ block body
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-							
-						a(class="navbar-brand", href="#", style={color: "#009E60"}) bonnivoire-ev
+						a(class="navbar-brand", href="#", style={color: "#009E60"}) bonnivoire-ev 
 					#navbar.navbar-collapse.collapse
 						ul.nav.navbar-nav
 							li.active
-								a(href="#", style={color: "#009E60"}) Home
-							li
-								a(href="/about", style={color: "#009E60"}) About
-							li
-								a(href="/contact", style={color: "#009E60"}) Contact
+								a(href="#", style={color: "#009E60"}) Accueil				
 							li.dropdown
 								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false', style={color: "#009E60"})
 									| Nous connaitre 
 									span.caret
 								ul.dropdown-menu(role='menu')
 									li
-										a(href='/about', style={color: "#009E60"}) Adhérer
+										a(href='#bonnIvoire', style={color: "#009E60"}) Bonnivoire
 									li
-										a(href='/about', style={color: "#009E60"}) Le Bureau
+										a(href='/message', style={color: "#009E60"}) Vision
 									li
-										a(href='/about', style={color: "#009E60"}) Les Infos de Bonn
+										a(href='/adhesion', style={color: "#009E60"}) Adhérer
+									li
+										a(href='#about', style={color: "#009E60"}) Bureau
+									li
+										a(href='/activites', style={color: "#009E60"}) Activités
+									li
+										a(href='/necrologie', style={color: "#009E60"}) Nécrologie
 									li.divider
 									//li.dropdown-header Nav header
 									li
-										a(href='/about', , style={color: "#009E60"}) Faire un don
-									//li
-										a(href='#') One more separated link
+										a(href='/coverSpender',  style={color: "#009E60"}) Nous soutenir
+									li
+										a(href='/message/projets',  style={color: "#009E60"}) Projets
+									li
+										a(href='/gallery', style={color: "#009E60"}) Galérie photo	
+							li
+										a(href='/blog', style={color: "#009E60"}) Kongossa							
+							li.dropdown
+								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false', style={color: "#009E60"})
+									| Liens utiles 
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='https://ambaci.de/', style={color: "#009E60"}) Ambassade
+									li
+										a(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365658', style={color: "#009E60"}) Loi d'immigration
+									li
+										a(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/-/1365666', style={color: "#009E60"}) Devenir Allemand
+									li
+										a(href='/about', style={color: "#009E60"}) Les aides sociales
+									li.divider
+									//li.dropdown-header Nav header
+									li
+										a(href='https://www.auswaertiges-amt.de/fr/02-entree-sejour/02-apprendre-travailler-artikel/1361114', , style={color: "#009E60"}) Apprendre et travailler en Allemagne
+									li
+										a(href='https://www.deutschakademie.de/online-deutschkurs', style={color: "#009E60"}) Apprendre l' allemand
+							li
+								a(href="#contact", style={color: "#009E60"}) Contact
+							li
+								a(href="#about", style={color: "#009E60"}) About
+							
+							li
+								.btn-group.dropdown
+									button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+										span.lang-sm.lang-lbl-full(lang='fr')
+										caret
+									.dropdown-menu(aria-labelledby='dropdownMenuButton')
+										a.dropdown-item(href='/coverSpender')
+											span.lang-sm.lang-lbl-full(lang='de')
+											caret
+										a.dropdown-item(href='/coverSpender/coverSpender_en') 
+											span.lang-sm.lang-lbl-full(lang='en')
+									
+							//li.dropdown
+								a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false', style={color: "#009E60"})
+									button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+										span.lang-sm.lang-lbl-full(lang='fr')
+										caret
+									.dropdown-menu(aria-labelledby='dropdownMenuButton')
+										a.dropdown-item(href='#')
+											span.lang-sm.lang-lbl-full(lang='de')
+											caret
+										a.dropdown-item(href='#') 
+											span.lang-sm.lang-lbl-full(lang='en')
+							//li.btn-group.dropdown
+								button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+									span.lang-sm.lang-lbl-full(lang='fr')
+									caret
+								.dropdown-menu(aria-labelledby='dropdownMenuButton')
+									a.dropdown-item(href='#')
+										span.lang-sm.lang-lbl-full(lang='de')
+										caret
+									a.dropdown-item(href='#') 
+										span.lang-sm.lang-lbl-full(lang='en')
+
+
+								//.btn-group.dropdown
+									button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown')
+										span.lang-sm.lang-lbl-full(lang='fr')
+										span.caret
+									//ul.dropdown-menu(role='menu')																				
+										li
+											span.lang-sm.lang-lbl-full(lang='de')
+										li
+											span.lang-sm.lang-lbl-full(lang='en')
+									
+						//	li.dropdown
+								a.dropdown-toggle(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false')
+									| Rich O Brien 
+									span.caret
+								ul.dropdown-menu
+									.bfh-selectbox.bfh-countries(data-country='US' data-flags='true')
+										input(type='hidden' value='')
+										a.bfh-selectbox-toggle(role='button' data-toggle='bfh-selectbox' href='#')
+											span.bfh-selectbox-option.input-medium(data-option='')
+											b.caret
+										.bfh-selectbox-options
+											input.bfh-selectbox-filter(type='text')
+											div(role='listbox')
+												ul(role='option')
+
+
+							li
+								i.united.states.flag
+	//link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet')
+	//script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js')
+	//script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
+		.cookie-accept.d-block.position-fixed.mw-25.bg-primary.text-white.rounded-top.pt-2.pr-3.pl-3.pb-2
+			h5 This site uses cookies
+			p
+				| We - 
+				em and our partners
+				|  - use cookies to deliver our services and to show you ads based on your interests. Information about cookies and their deactivation you can find in our Privacy Policy. By using our website, you agree to the use of cookies.
+			a.btn.btn-outline-light.btn-block(target='_blank' href='https://www.totoprayogo.com') Accept
+
+					
 							
 	// Carousel {style( color = '009e60')}
 	// ==================================================
-	+carousel("myCarousel",[{image:"../images/carousel7.jpg", h1:"Le Nouveau Bonn Ivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité. CONNAISSEUR CONNAIT.", button:{caption:"Regarde nos actions",url:"#"}},    {image:"../images/carousel2.jpg",h1:"Apolitique et laïc",p:"Plus jamais de division. Ni église, ni mosquée. Tous ensemble.",button:{caption:"Notre status",url:"#"}},{image:"../images/carousel3.jpg",h1:"",p:"",button:{caption:"Nous voulons te convaincre",url:"#"}}, {image:"../images/carousel4.jpg", h1:"Relévons le niveau",p:"Ensemble, bâtissons une association forte pour rester FIER(E)S d´être IVOIRIEN(NE)S.", button:{caption:"Adhère aujourd'hui",url:"#"}}, {image:"../images/carousel5.jpg", h1:"",p:"", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}, {image:"../images/carousel6.jpg", h1:"",p:"", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}, {image:"../images/carousel1.jpg",h1:"Le Nouveau Bonn Ivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité. CONNAISSEUR CONNAIT.", button:{caption:"Belle Côte d`ivoire - Nous rélevons les défis",url:"#"}}])
+	+carousel("myCarousel",[ {image:"../images/carousel_new_1.jpg",h1:"L'association des Ivoiriens de Bonn et de ses environs - Apolitique et laïc",p:"Plus jamais de division. Ni église, ni mosquée. Tous ensemble.",button:{caption:"Nous connaitre",url:"#bonnIvoire"}},
+		{image:"../images/carousel_new_2.jpg",h1:"La force des femmes de bonnivoire",p:"Derrière de grandes femmes se cachent de grands hommes",button:{caption:"Nous voulons te convaincre",url:"/message"}}, 
+		{image:"../images/carousel_try9.jpg", h1:"Relévons le niveau",p:"Ensemble, bâtissons une association forte pour rester FIER(E)S d´être IVOIRIEN(NE)S.", button:{caption:"Adhère aujourd'hui",url:"/adhesion"}}, 
+		{image:"../images/carousel_try7.jpg", h1:"Visite notre KONGOSSA",p:"L'affairage chez bonnivoire - Colombe t'attend", button:{caption:"Le Kongossa de bonnivoire",url:"/blog"}}, 
+		{image:"../images/carousel_try6.jpg", h1:"La vie a ses dures épreuves",p:"Bonnivoire t'accompagne", button:{caption:"Nécrologie",url:"/necrologie"}}, 
+		{image:"../images/carousel_try5.jpg",h1:"La nouvelle Bonnivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité.", button:{caption:"La feuille de route",url:"/message"}}])
 	//  Marketing messaging and featurettes
+	//{image:"../images/carousel7.jpg", h1:"Le Nouveau Bonn Ivoire",p:"Nous osons un nouveau départ sous le signe de l' éfficacité. CONNAISSEUR CONNAIT.", button:{caption:"Regarde nos actions",url:"#"}},
 	//  ==================================================
 	// Wrap the rest of the page in another container to center all the content.
-	.container.marketing
-		// Three columns of text below the carousel
+	
+	// evenements
+	//.container-fluid
+		.jumbotron(style='background-color: #ffffffff')
+			marquee(behavior='scroll' direction='left' scrollamount='10' gap='00' style={background: "#000000"}) 
+				h2
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Parti trop tôt.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Enterrement le 31 .08. 2019 au cimétiere de Wiliiamsville Abidjan.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Parti trop tôt.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Parti trop tôt.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Enterrement le 31 .08. 2019 au cimétiere de Wiliiamsville Abidjan.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") Parti trop tôt.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					font(color= "#FFFFFFFF") RIP Adieu YOROBO.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+					
+	//.jumbotron.jumbotron-fluid(style='background-color: #ffffffff')
+		.container
+			.embed-responsive.embed-responsive-16by9
+			
+				//iframe(width='560' height='315' src='https://www.youtube.com/embed/zljIgYrg8uU?autoplay=1' frameborder='0' allow='accelerometer autoplay = 1; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+				//<iframe width="560" height="315" src="https://www.youtube.com/embed/cuk8PdGKv9c?" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				//iframe(width="560" height="315" src="https://www.youtube.com/embed/5iHp_R3Wq_k?autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+				//iframe(width="560" height="315" src="https://www.youtube.com/embed/Jy67vW3N00w?autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+				//iframe(width="560" height="315" src="https://www.youtube.com/embed/4O_S0OQW8oM?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+				iframe(width="560" height="315" src="https://www.youtube.com/embed/C4OfcqSrckQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+			<br/>
+			<br/>
+			<br/>
+			h3.display-4 
+				font(color="#00000000") Hommage à toi, RIP...parti trop tôt.	
+	.container-fluid
+		.jumbotron(style='background-color: #FFFFFF')
+			marquee(behavior='scroll' direction='left' scrollamount='12' style={background: "#009E60"}) 
+				p
+					strong
+						//font(color= "#FFFFFF") Assemblée générale extraordinaire Samédi 31 Août 2019 16 heures (GMT +2) -  Ne te laisse pas raconter le nouveau départ.  &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
+						font(color= "#FFFFFF") Visite du parc animalier de Rolandseck - Samédi 07 Septembre 2019  Départ: Bonn HBf - 10 heures (GMT +2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						font(color= "#FFFFFF") Pour tes problèmes de coeur écris à Colombe via notre contact et visite notre KONGOSSA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						font(color= "#FFFFFF") Nous élaborons la feuille de route des projets 2020-2021 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						font(color= "#FFFFFF") Nous préparons une campagne de fundraising pour mi Octobre 2019 - Rejoins le mouvement - &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
+						font(color= "#FFFFFF") Nous finalisons notre présence Web - Déjà 63% du travail accompli - Ton feedback est important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						font(color= "#FFFFFF") Envoie-nous un mail, c'est gratuit - Quels sont les thèmes qui t'interessent ????
+	
+		//.jumbotron(style='background-color: #ffffffff')
+			.container
+				.row  (style='background-color: #009E60')
+					.col-md-8.col-md-offset-2
+						.heading
+						h1
+							span 
+								font(color= "#009E60") Evènements
+						.sub-heading
+						p
+							font(color= "#009E60") Ne te laisse surtout pas raconter le nouveau départ. Click sur le boutton.
+							a.btn.btn-default(href='/activites', style={color: "#009E60"}, role='button') Détpkpkk
+					
+				//p
+					a.btn.btn-primary.btn-change3(data-toggle='collapse' href='#agextra' role='button' aria-expanded='false' aria-controls='agextra' style={background:"#009E60"}) AG Extraordinaire 
+					button.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='#rolandseck' aria-expanded='false' aria-controls='rolandseck', style={background:"#009E60"}) Sortie en famille au Parc Animalier 
+					button.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019', style={background:"#009E60"} , url="/status") Landesintegrationskongress 2019
+					
+					.row
+						.col
+							#agextra.collapse.multi-collapse
+								.card.card-body.row
+									.col-md-6
+										.team-box
+										img.img-responsive(src='../images/agextra.jpg' alt='')
+										.roles
+											h5
+											strong
+												font(color= "#F77F00") Assemblée générale extraordinaire<br/>
+											font(color= "#F77F00") Samedi 31 Août 2019 - 
+											font(color= "#F77F00") 16 heures (GMT + 2)  <br />
+											p
+											a.btn.btn-default(href='/activites#AG', style={color: "#009E60"}, role='button') Détails »
+											<br/><br/><br/><br/>
+						.col
+							#rolandseck.collapse.multi-collapse
+								.card.card-body
+									.col-md-6
+										.team-box
+										img.img-responsive(src='/images/ausflug_1.jpg' alt='')
+										.roles
+											h5
+											strong
+												font(color= "#F77F00") Sortie détente pour famille - Visite du park animalier de Rolandseck <br/>
+											font(color= "#F77F00") Samedi 07 Septembre 2019 - 10 heures (GMT +2) - Départ: Bonn HBf <br />
+											p
+											a.btn.btn-default(href='/activites#ausflug_1', style={color: "#009E60"}, role='button') Détails »
+						
+						.col
+							#LIKongress2019.collapse.multi-collapse
+								.card.card-body
+									.col-md-6
+										.team-box
+										img.img-responsive(src='/images/LIKongress2019.pdf' alt='')
+										.roles
+											h5
+											strong
+												font(color= "#F77F00") Sortie détente pour famille - Visite du park animalier de Rolandseck <br/>
+											font(color= "#F77F00") Samedi 07 Septembre 2019 - 10 heures (GMT +2) - Départ: Bonn HBf <br />
+											p
+											a.btn.btn-default(href='/activites#LIKongress2019', style={color: "#009E60"}, role='button') Détails »
+									
+		hr.featurette-divider
+		//.container
+				.row
+					.col-md-8.col-md-offset-2
+						.heading
+						h1
+							span 
+								font(color= "#009E60") Evènements
+						.sub-heading
+						p
+							font(color= "#009E60") Ne te laisse surtout pas raconter le nouveau départ. Click sur le boutton.
+						a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/activites' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Activités
+		
+		// Timeline responsive https://bootsnipp.com/snippets/yGbV
+		.container
+			.page-header
+				h1#timeline 
+					span 
+						font(color= "#009E60") Evènements
+				p
+					font(color= "#009E60") Ne te laisse surtout pas raconter le nouveau départ. Rejouins le mouvement...
+				a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/activites' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Activités
+					
+			ul.timeline
+				li
+					.timeline-badge
+						i.glyphicon.glyphicon-check
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title 
+								a(href='/LIKongress2019')
+									font(color= "#009E60") LANDESINTEGRATIONSKONGRESS 2019
+							p
+								small.text-muted
+									i.glyphicon.glyphicon-time
+									font(color= "#F77F00")  9h30 - 16h ✹	18 Novembre 2019 
+						.timeline-body
+							p 
+								| Am 18. November 2019 findet der 8. Landesintegrationskongress unter dem Motto „#IchDuWirNRW im Dialog – 
+								| Was uns ausmacht, was uns stark macht.“ in Solingen statt. Werte sind die Grundlage für den Zusammenhalt unserer Gesellschaft. 
+								| Wir in Nordrhein-Westfalen sind stolz auf die Vielfalt unserer Einwanderungsgesellschaft. Was macht uns aus? Was macht uns als Gemeinschaft stark? Und welche Rolle spielen Werte für uns?
+								|  Auch darüber möchten wir gemeinsam mit Ihnen im Rahmen des Landesintegrationskongresses diskutieren.
+							hr
+							.btn-group
+								button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+									i.glyphicon.glyphicon-cog
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='https://www.mkffi.nrw') 
+											font(color= "#009E60") web
+									//li
+										a(href='#') Another action
+									//li
+										a(href='#') Something else here
+									//li.divider
+									//li
+										a(href='#') Separated link
+				li.timeline-inverted
+					.timeline-badge.warning
+						i.glyphicon.glyphicon-credit-card
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title 
+								a(href='') 
+									font(color= "#009E60") AKWAABA 2019 -  „Auf den Spuren der Migration ...eine Zeitreise ins Licht“
+							p
+								small.text-muted
+									i.glyphicon.glyphicon-time
+									font(color= "#F77F00")  12h - 19h ✹	14 Septembre 2019 
+						.timeline-body
+							p 
+								| In letzter Zeit ist es in Köln wiederholt zu gewaltsamen Übergriffen auf Menschen afrikanischer Herkunft, teilweise mit Todesfolgen gekommen. 
+								| In den populären Diskursethiken bleiben stereotype Bilder aus der Kolonialzeit von Afrika und Menschen afrikanischer Herkunft trotz zahlreicher Fortschritte dominierend. 
+								| In Zeiten eines wiedererstarkenden Populismus in ganz Europa ist es wichtiger denn je, dass dieses Thema nicht marginalisiert wird.
+								| Solange solchen herabsetzenden Bildern nicht aktiver begegnet wird, bleibt struktureller, oftmals latenter und immer öfters offener Rassismus gegen Menschen afrikanischer Herkunft aktuell. 
+								| Genau hier will AKWAABA 2019 ansetzen. Wie können wir Ungleichheiten verringern (vgl. SDG 10)?
+							hr
+							.btn-group
+								button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+									i.glyphicon.glyphicon-cog
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='http://www.akwaaba.buendnis14afrika.org/') 
+											font(color='#FF0000') Not Secure website
+				li
+					.timeline-badge.info
+						i.glyphicon.glyphicon-credit-card
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title 
+								a(href='/sortie') 
+									font(color= "#009E60") Sortie au Parc Animalier de Rolandseck
+							p
+								small.text-muted
+									i.glyphicon.glyphicon-time
+									font(color= "#F77F00")  Départ Bonn HBf 10h ✹	07 Septembre 2019 
+						.timeline-body
+							p 
+								| Une sortie en famille pour petits et grands pour visiter le parc animalier de Rolandseck Am Kasselbach4, 53424 Remagen. A environ 30mn de Bonn, une bonne occasion d'entreprendre en famille.
+								| Animaux, loisir, picnique, air frais. Pour les enfants, une expérience à ne pas rater.
+							hr
+							.btn-group
+								button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+									i.glyphicon.glyphicon-cog
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='/sortie') 
+											font(color= "#009E60") Flyer
+											
+				li.timeline-inverted
+					.timeline-badge.danger
+						i.glyphicon.glyphicon-thumbs-up
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title
+								a(href='/AGE') 
+									font(color= "#009E60") AG extraordinaire de bonnivoire
+							p
+								small.text-muted
+									i.glyphicon.glyphicon-time
+									font(color= "#F77F00")  16h ✹	31 Août 2019 
+						.timeline-body
+							p
+								| La réunion à ne pas louper. La nouvelle bonnivoire vous invite à son AG extraordinaire pour le nouveau départ. 
+								| Le bureau vous exposera son plan, ses idées pour faire de bonnivoire "l'association" des ivoiriens qui fédèrera toutes les autres par sa force, ses projets et ses sponsors.
+								| Ne te laisse pas raconter, prends part à l'avenir.... 
+							hr
+							.btn-group
+								button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+									i.glyphicon.glyphicon-cog
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='/AGE') 
+											font(color= "#009E60") Convocation
+				li
+					.timeline-badge.info
+						i.glyphicon.glyphicon-thumbs-up
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title 
+								a(href='/gallery') 
+									font(color= "#009E60") Grill Party et Foot - Voir les photos
+							p
+								small.text-muted
+									i.glyphicon.glyphicon-time
+									font(color= "#F77F00")  14h ✹	20 Juillet 2019 
+						.timeline-body
+							p 
+								|  Nous avons été fiers de vous revoir, merci à tous les participants.
+							hr
+							.btn-group
+								button.btn.btn-primary.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
+									i.glyphicon.glyphicon-cog
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='/gallery') 
+											font(color= "#009E60") Les photos
+				//li
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title Mussum ipsum cacilds
+						.timeline-body
+							p
+								| Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&eacute; pra quem &eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
+				//li.timeline-inverted
+					.timeline-badge.success
+						i.glyphicon.glyphicon-thumbs-up
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title Mussum ipsum cacilds
+						.timeline-body
+							p
+								| Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra l&aacute; , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. M&eacute; faiz elementum girarzis, nisi eros vermeio, in elementis m&eacute; pra quem &eacute; amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
+
+
+
+
+		// End timeline responsive
+		
+		
+		
+		
+		
+		
+		// Timeline non responsive
+		//.container
+			.row
+				.col-12
+					.card
+						.card-body
+							//h1.card-title 
+								font(color= "#009E60") Calendrier
+							p.card-description 
+								h3
+									font(color= "#009E60") Calendrier 2019
+							.mt-5
+								.timeline
+									.timeline-wrapper.timeline-inverted.timeline-wrapper-danger
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title
+													a(href='/LIKongress2019') LANDESINTEGRATIONSKONGRESS 2019
+											.timeline-body
+												p 
+													| Am 18. November 2019 findet der 8. Landesintegrationskongress unter dem Motto „#IchDuWirNRW im Dialog – 
+													|	Was uns ausmacht, was uns stark macht.“ in Solingen statt. Werte sind die Grundlage für den Zusammenhalt unserer Gesellschaft. 
+													| Wir in Nordrhein-Westfalen sind stolz auf die Vielfalt unserer Einwanderungsgesellschaft. Was macht uns aus? Was macht uns als Gemeinschaft stark? Und welche Rolle spielen Werte für uns?
+													|  Auch darüber möchten wir gemeinsam mit Ihnen im Rahmen des Landesintegrationskongresses diskutieren.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 09h30 - 16h
+												span.ml-md-auto.font-weight-bold.pull-right 18 Novembre 2019
+									.timeline-wrapper.timeline-wrapper-warning
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title
+													a(href='http://www.akwaaba.buendnis14afrika.org') AKWAABA 2019 -  „Auf den Spuren der Migration ...eine Zeitreise ins Licht“
+											.timeline-body
+												p 
+													| In letzter Zeit ist es in Köln wiederholt zu gewaltsamen Übergriffen auf Menschen afrikanischer Herkunft, teilweise mit Todesfolgen gekommen. 
+													| In den populären Diskursethiken bleiben stereotype Bilder aus der Kolonialzeit von Afrika und Menschen afrikanischer Herkunft trotz zahlreicher Fortschritte dominierend. 
+													| In Zeiten eines wiedererstarkenden Populismus in ganz Europa ist es wichtiger denn je, dass dieses Thema nicht marginalisiert wird.
+													| Solange solchen herabsetzenden Bildern nicht aktiver begegnet wird, bleibt struktureller, oftmals latenter und immer öfters offener Rassismus gegen Menschen afrikanischer Herkunft aktuell. 
+													| Genau hier will AKWAABA 2019 ansetzen. Wie können wir Ungleichheiten verringern (vgl. SDG 10)?
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 12h - 19h
+												span.ml-md-auto.font-weight-bold.pull-right 14 Septembre 2019
+									.timeline-wrapper.timeline-inverted.timeline-wrapper-danger
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title 
+													a(href='/sortie') Sortie au Parc Animalier de Rolandseck
+											.timeline-body
+												p 
+													| Une sortie en famille pour petits et grands pour visiter le parc animalier de Rolandseck Am Kasselbach4, 53424 Remagen. A environ 30mn de Bonn, une bonne occasion d'entreprendre en famille.
+													| Animaux, loisir, picnique, air frais. Pour les enfants, une expérience à ne pas rater.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span Départ 10h Bonn HBf
+												span.ml-md-auto.font-weight-bold.pull-right 07 Septembre 2019
+									.timeline-wrapper.timeline-wrapper-success
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title 
+													a(href='/AGE') AG extraordinaire de bonnivoire
+											.timeline-body
+												p
+													| La réunion à ne pas louper. La nouvelle bonnivoire vous invite à son AG extraordinaire pour le nouveau départ. 
+													| Le bureau vous exposera son plan, ses idées pour faire de bonnivoire "l'association" des ivoiriens qui fédèrera toutes les autres par sa force, ses projets et ses sponsors.
+													| Ne te laisse pas raconter, prends part à l'avenir.... 
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 16h
+												span.ml-md-auto.font-weight-bold.pull-right 31 Août 2019
+									.timeline-wrapper.timeline-inverted.timeline-wrapper-danger
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title 
+													a(href='/gallery') Grill Party et Foot - Voir les photos
+											.timeline-body
+												p 
+													|  Nous avons été fiers de vous revoir, merci à tous les participants.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 14h
+												span.ml-md-auto.font-weight-bold.pull-right 20 Juillet 2019
+									
+									//.timeline-wrapper.timeline-inverted.timeline-wrapper-info
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title Bootstrap 4 Alpha 4
+											.timeline-body
+												p
+													| Alpha 4 is here to address those pesky build and package errors, a few CSS bugs, and some documentation inconsistencies we introduced in our last release.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 19
+												span.ml-md-auto.font-weight-bold 27th July 2016
+									//.timeline-wrapper.timeline-wrapper-primary
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title Bootstrap 4 Alpha 3
+											.timeline-body
+												p
+													| Alpha 3 has landed! We have an overhauled grid, updated form controls, a new font stack, tons of bug fixes, and more.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 25
+												span.ml-md-auto.font-weight-bold 25th July 2016
+									//.timeline-wrapper.timeline-inverted.timeline-wrapper-info
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title Bootstrap 4 Alpha 2
+											.timeline-body
+												p
+													| The general plan for v4&rsquo;s development starts with a few alpha releases. We&rsquo;re a little behind on that, but should be getting caught up as the year winds down.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 32
+												span.ml-md-auto.font-weight-bold 19th Aug 2015
+									//.timeline-wrapper.timeline-wrapper-success
+										.timeline-badge
+										.timeline-panel
+											.timeline-heading
+												h6.timeline-title Bootstrap 4 alpha 1
+											.timeline-body
+												p
+													| Bootstrap 4 has been a massive undertaking that touches nearly every line of code.
+											.timeline-footer.d-flex.align-items-center.flex-wrap
+												i.mdi.mdi-heart-outline.text-muted.mr-1
+												span 26
+												span.ml-md-auto.font-weight-bold 15th Jun 2015
+
+	//.container(style='background-color: #009E60')
 		.row
-			.col-lg-4
-				img.img-circle(src='../images/marketing1.jpg', alt='Generic placeholder image', width='200', height='200')
-				h2 Le nouveau Bonn Ivoire
-				p
-					| Le renouveau passe par le nettoyage du passé, mais aussi sur le fait de s'appuyer sur les bases anciennes. Nous voulons renover, réunir, unifier,  mais aussi éduquer en tant que mères, femmes et soeurs. Loin de notre terre natale, nous unifier n' est pas qu'une necessité. C'est aussi un impératif
-				p
-					a.btn.btn-default(href='#', role='button') Détails »
-			.col-lg-4
-				img.img-circle(src='../images/marketing2.jpg', alt='Generic placeholder image', width='200', height='200')
-				h2 Apolitique et laïc
-				p
-					| Nous promettons de ne nous mêler ni de politique, ni de réligion. Nous ne sommes ni pas un parti politique, ni une institution politique. Notre expertise se situe dans la vie en Allemagne en tant que migrant(e), pour nous organiser, nous connaitre, nous entraider. C' est à cela que nous vous mettons au défi de nous juger.
-				p
-					a.btn.btn-default(href='#', role='button') Détails »
-			.col-lg-4
-				img.img-circle(src='../images/marketing3.jpg', alt='Generic placeholder image', width='200', height='200')
-				h2 Convaincre par les actions
-				p
-					| De même que le sel ne clamera jamais haut et fort qu´il est salé, nous voulons laisser parler nos actions pour nous. Mais nous avons besoin de toi, de vous, de votre soutien. Nous sommes des bénévolles avec plein d'idées, de professionalisme, de courage et de rage de nous voir frères et soeur divisés.
-				p
-					a.btn.btn-default(href='#', role='button') Détails »
-		// START THE FEATURETTES
+			.col-xs-12.col-sm-offset-2.col-sm-8(class='[ ]')
+				ul.event-list
+					li
+						time(datetime='2019-09-31')
+							span.day 31
+							span.month Sept
+							span.year 2019
+							span.time 16h
+						img(alt='AG Bonnivoire' src='./images/agextra.jpg')
+						.info
+							h2.title Assemblée Générale Extraordinaire
+							p.desc Bonnivoire AG
+						.social
+							ul
+								li.facebook(style='width:33%;')
+									a(href='#facebook')
+										span.fa.fa-facebook
+								li.twitter(style='width:34%;')
+									a(href='#twitter')
+										span.fa.fa-twitter
+								li.google-plus(style='width:33%;')
+									a(href='#google-plus')
+										span.fa.fa-google-plus
+					li
+						time(datetime='2014-07-20 0000')
+							span.day 8
+							span.month Jul
+							span.year 2014
+							span.time 12:00 AM
+						.info
+							h2.title One Piece Unlimited World Red
+							p.desc PS Vita
+							ul
+								li(style='width:50%;')
+									a(href='#website')
+									span.fa.fa-globe
+									|  Website
+								li(style='width:50%;')
+									span.fa.fa-money
+									|  $39.99
+						.social
+							ul
+								li.facebook(style='width:33%;')
+									a(href='#facebook')
+										span.fa.fa-facebook
+								li.twitter(style='width:34%;')
+									a(href='#twitter')
+										span.fa.fa-twitter
+								li.google-plus(style='width:33%;')
+									a(href='#google-plus')
+										span.fa.fa-google-plus
+					li
+						time(datetime='2014-07-20 2000')
+							span.day 20
+							span.month Jan
+							span.year 2014
+							span.time 8:00 PM
+						img(alt='My 24th Birthday!' src='https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg')
+						.info
+							h2.title Mouse0270&apos;s 24th Birthday!
+							p.desc Bar Hopping in Erie, Pa.
+							ul
+								li(style='width:33%;')
+									| 1 
+									span.glyphicon.glyphicon-ok
+								li(style='width:34%;')
+									| 3 
+									span.fa.fa-question
+								li(style='width:33%;')
+									| 103 
+									span.fa.fa-envelope
+						.social
+							ul
+								li.facebook(style='width:33%;')
+									a(href='#facebook')
+										span.fa.fa-facebook
+								li.twitter(style='width:34%;')
+									a(href='#twitter')
+										span.fa.fa-twitter
+								li.google-plus(style='width:33%;')
+									a(href='#google-plus')
+										span.fa.fa-google-plus
+					li
+						time(datetime='2014-07-31 1600')
+							span.day 31
+							span.month Jan
+							span.year 2014
+							span.time 4:00 PM
+						img(alt='Disney Junior Live On Tour!' src='http://www.thechaifetzarena.com/images/main/DL13_PiratePrincess_thumb.jpg')
+						.info
+							h2.title Disney Junior Live On Tour!
+							p.desc  Pirate and Princess Adventure
+							ul
+								li(style='width:33%;')
+									| $49.99 
+									span.fa.fa-male
+								li(style='width:34%;')
+									| $29.99 
+									span.fa.fa-child
+						.social
+							ul
+								li.facebook(style='width:33%;')
+									a(href='#facebook')
+										span.fa.fa-facebook
+								li.twitter(style='width:34%;')
+									a(href='#twitter')
+										span.fa.fa-twitter
+								li.google-plus(style='width:33%;')
+									a(href='#google-plus')
+										span.fa.fa-google-plus
+	// End timeline non responsive
+	hr.featurette-divider
+	
+
+	.section#nouveanBonnIvoire.page-section
+		.container.marketing
+			// Three columns of text below the carousel
+			.row
+				.col-lg-4
+					img.img-circle(src='../images/IMG-20190825-WA0000.jpg', alt='Generic placeholder image', width='300', height='300')
+					h2 La nouvelle bonnivoire
+					p
+						| Le renouveau passe par le nettoyage du passé, mais aussi sur le fait de s'appuyer sur les bases anciennes. 
+						| Nous voulons renover, réunir, unifier,  mais aussi éduquer en tant que mères, femmes et soeurs. Loin de notre terre natale, nous unifier n' est pas qu'une necessité. 
+						| C'est un impératif.
+					p
+						a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message#convaincre2' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+				.col-lg-4
+					img.img-circle(src='../images/marketing2.jpg', alt='Generic placeholder image', width='300', height='300')
+					h2 Apolitique et laïc
+					p
+						| Nous promettons de ne nous mêler ni de politique, ni de réligion. Nous ne sommes ni un parti politique, ni une institution politique. 
+						| Notre expertise se situe dans la vie en Allemagne en tant que migrant(e), pour nous organiser, nous connaitre, nous entraider. 
+						| C' est à cela que nous vous mettons au défi de nous juger.
+					p
+						a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+				.col-lg-4
+					img.img-circle(src='../images/marketing3.jpg', alt='Generic placeholder image', width='300', height='300')
+					h2 Convaincre par nos actes
+					p
+						| De même que le sel ne clamera jamais haut et fort qu´il est salé, nous voulons laisser parler nos actions pour nous. 
+						| Mais nous avons besoin de toi, de vous, de votre soutien. Nous sommes des bénévolles avec plein d'idées, 
+						| de professionalisme et de courage. Tous ensemble avec bonnivoire.
+					p
+						a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/message#convaincre1' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Détails »
+			// START THE FEATURETTES
 		hr.featurette-divider
-		.row.featurette
-			.col-md-7
-				h2.featurette-heading
-					| Notre premier barbecue. 
-					span.text-muted C'etait super.
-				p.lead
-					| Rassembler est notre mission première. Nous remerçions tous ceux qui étaient présents. Ça a été un plaisir de vous revoir en bonne santé. Que le SEIGNEUR te garde. 
-			.col-md-5
-				img.featurette-image.img-responsive.center-block(src='../images/featurette1.jpg', alt='Generic placeholder image')
+		.container
+			.row.featurette
+				.col-md-7
+					h2.featurette-heading
+						| Notre premier barbecue. 
+						span.text-muted C'etait super.
+					p.lead
+						| Rassembler est notre mission première. Nous remerçions tous ceux qui étaient présents. Ça a été un plaisir de vous revoir en bonne santé. Que le SEIGNEUR te garde. 
+				.col-md-5
+					img.featurette-image.img-responsive.center-block(src='../images/featurette1.jpg', alt='Generic placeholder image')
+			hr.featurette-divider
+			.row.featurette
+				.col-md-7.col-md-push-5
+					h2.featurette-heading
+						| Chez nous au pays. 
+						span.text-muted La nostalgie des anciens temps.
+					p.lead
+						| Le Bengué est dur, loin de nos familles, nous nous sommes reconstruits. Bonnivoire veux t' avoir comme famille, pour partager ensemble les bons moments. Mais aussi les moins bons pour que ta tristesse soit plus légère. Rejoins le mouvement ... 
+				.col-md-5.col-md-pull-7
+					img.featurette-image.img-responsive.center-block(src='../images/featurette2.jpg', alt='Generic placeholder image')
+			hr.featurette-divider
+			.row.featurette
+				.col-md-7
+					h2.featurette-heading
+						| Abidjan la belle. 
+						span.text-muted Montrons notre pays à ceux qui nous sous estiment.
+					p.lead
+						| C' est environ 4.4 Millions d'habitants sur 422 km2, havre de développement bordé par la lagune ébrié. Nous sommes fièr(e)s.
+				.col-md-5
+					img.featurette-image.img-responsive.center-block(src='../images/featurette3.jpg', alt='Generic placeholder image')
+			//hr.featurette-divider
+			// /END THE FEATURETTES
+	hr.featurette-divider
+	.section#bonnIvoire.page-section
+		.container
+					.row
+						.col-md-8.col-md-offset-2
+							.heading
+							h1
+								span 
+									font(color= "#009E60") L' association des ivoiriens de BONN -  Bonnivoire e.V
+	.section#message.page-section
+		hr
+		.container
+			
+			.row
+				.col-sm-2
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #F77F00')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_promesse') 
+										font(color='#FFFFFF') Notre promesse
+							#collapse_promesse.panel-collapse.collapse
+								.panel-body 
+									
+								//	| Vu l’isolement de chaque nouvel arrivant dans la région de Bonn et ses environs,
+									| Compte tenu de l'importance d'un environnement culturel commun et approprié pour le développement socioculturel de l'individu.
+									| Conscient des effets néfastes de la solitude sur tous les Ivoiriens résidant à Bonn et ses environs.
+									| Constatant que, dans cet environnement, les habitants ivoiriens de la région de Bonn et ses environs n’ont pas l’ambition de contribuer au futur et au bonheur de tous.
+									| Nous, les Ivoiriens de Bonn et de ses environs, avons décidé de créer une association pour offrir à chacun de nous un lieu de réunification, d ́échange, de fraternité cordiale et de promouvoir l’image de «la Côte d’Ivoire à Bonn» de Bonn, ses environs et dans la région.
+									| Cette Union dénommée BONNIVOIRE - Côte d'Ivoire à Bonn et ses environs a été fondée le 8 septembre 2001 dans la salle de l’E.S.G (Communauté Estudiantine Protestante), Königstraße 88, 53115 Bonn pour assurer le bon fonctionnement de cette association, les présents statuts ont été élaborés.
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") L ́union fait la force 
+				.col-sm-10
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #FFFFFF')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse1') 
+										font(color='#009E60') L'histoire de bonnivoire
+							#collapse1.panel-collapse.collapse
+								.panel-body 
+									
+									| Vu l’isolement de chaque nouvel arrivant dans la région de Bonn et ses environs,
+									| Compte tenu de l'importance d'un environnement culturel commun et approprié pour le développement socioculturel de l'individu.
+									| Conscient des effets néfastes de la solitude sur tous les Ivoiriens résidants à Bonn et ses environs.
+									| Constatant que, dans cet environnement, les habitants ivoiriens de la région de Bonn et ses environs n’ont pas l’ambition de contribuer au futur et au bonheur de tous.
+									| Nous, les Ivoiriens de Bonn et de ses environs, avons décidé de créer une association pour offrir à chacun de nous un lieu de réunification, d ́échange, de fraternité 
+									| cordiale et de promouvoir l’image de «la Côte d’Ivoire à Bonn».
+									| Cette Union dénommée BONNIVOIRE - Côte d'Ivoire à Bonn et ses environs a été fondée le 8 septembre 2001 dans la salle de l’E.S.G (Communauté Estudiantine Protestante), 
+									| Königstraße 88, 53115 Bonn pour assurer le bon fonctionnement de cette association, les présents statuts ont été élaborés.
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") L ́union fait la force 
+				.col-sm-7
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse2') 
+										font(color='#FFFFFF') Le parcours de bonnivoire
+							#collapse2.panel-collapse.collapse
+								.panel-body 
+									
+									| BonnIvoire e.V. est une association de tous les Ivoiriens et Ivoiriennes (Étudiants, Travailleurs, Non-Travailleurs, Handicapés, etc.) et des Sympathisants d'autres Nationalités dans la ville de Bonn et ses Alentours 
+									| (comme par exemple Rhein-Sieg- Kreis, Rheinland-Pfalz), elle est apolitique, non discriminatoire, impartiale, exempte de religion, charitable, honorifique, volontaire et bénévole.
+									| BonnIvoire comme dit son Nom, la Côte d ́Ivoire à Bonn et ses Alentours! L ́association a connue des moments fous comme les fêtes de fins d'années inoubliables, les participations et expositions dans les événements et manifestations africo-allemandes à RheinAue à Bonn des années passées, 
+									| l'accueil des éléphants footballeurs de la Côte D'Ivoire dans la ville de Troisdorf pendant la Coupe du Monde en Allemagne 2006, la collaboration avec l ́Ambassade de Côte d ́Ivoire en Allemagne pendant son siège à Bonn, etc. Elle a représenté dignement sa culture,
+									| Ses Activités étaient les plus honorées, acclamées et aimées. Comme on dit
+									| «Connaisseurs connaient»! Elle est libre et indépendante des autres associations ivoiriennes de la Rhénanie du Nord-Westphalie (NRW) de l ́Allemagne.
+									| BonnIvoire a souffert de la Guerre Civile qui a eu lieu en Côte d ́Ivoire en April 2011, avec les différents partis politiques de celle-ci. Les Ivoiriens et Ivoiriennes de Bonn et ses Alentours étaient divisés (ées), 
+									| affectés (ées) dans leurs amours propres.(Communauté Estudiantine Protestante), Königstraße 88, 53115 Bonn pour assurer le bon fonctionnement de cette association, les présents statuts ont été élaborés.
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") L ́union fait la force 
+				.col-sm-3
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #F77F00')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_lesPresi') 
+										font(color='#FFFFFF') Les précurseurs - Nos Prési
+							#collapse_lesPresi.panel-collapse.collapse
+								.panel-body 
+									#accordion.panel-group
+										.panel.panel-default
+											.panel-heading(style='background-color: #009E60')
+												h4.panel-title
+													a(data-toggle='collapse' data-parent='#accordion' href='#collapse_presi_desire')
+														font(color='#FFFFFF') Yébo, Désiré <br/>(09-2001 - 06-2008)
+											#collapse_presi_desire.panel-collapse.collapse.in
+												.panel-body
+													| Le précurseur, sa puissance réside dans son calme. Il a l'instinct du chasseur, il sait ce qui est bon.<br/>
+													| Merci Prési...
+										.panel.panel-default
+											.panel-heading(style='background-color: #009E60')
+												h4.panel-title
+													a(data-toggle='collapse' data-parent='#accordion' href='#collapse_presi_hugues')
+														font(color='#FFFFFF') Djolokomé, Hugues <br/>(06-2008 - 01-2010)
+											#collapse_presi_hugues.panel-collapse.collapse
+												.panel-body
+													| La continuité, avec la force de caractère. L' épanouissement de bonnivoire<br/>
+													| Merci Prési...
+										.panel.panel-default
+											.panel-heading(style='background-color: #009E60')
+												h4.panel-title
+													a(data-toggle='collapse' data-parent='#accordion' href='#collapse_presi_able')
+														font(color='#FFFFFF') Able, Godfroy<br/> (01-2010 - 06-2019)
+											#collapse_presi_able.panel-collapse.collapse
+												.panel-body
+													| Le navigateur, grande résistance aux vents contraires, il fait attérir l'AIRBUS A380 bonnivoire sans trop de dégâts. <br/>
+													| Merci Prési...
+								//.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") L ́union fait la force 				
+
+				.col-sm-2
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #FFFFFFFF')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_apolitique') 
+										font(color='#009E60') Apolitiques
+							#collapse_apolitique.panel-collapse.collapse
+								.panel-body 
+									
+									dl
+										dt Apolitique:
+										dd
+											| Qui refuse de prendre part à la politique.
+											| Chacun appartient ou non à un parti politique, bonnivoire n'en fait pas.
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#F77F00") 
+												| bonnivoire
+			.row
+				.col-sm-4
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #000000')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_parcours') 
+										font(color='#FFFFFFFF') Les objectifs de bonnivoire
+							#collapse_parcours.panel-collapse.collapse
+								.panel-body 
+									
+									| L ́association poursuit exclusivement et directement des fins de bienfaisance au sens  de la section «fins privilégiées» du code des impôts. Les objectifs de l ́association
+									ul
+										li Promouvoir l ́unité de tous les Ivoiriens et Ivoiriennes vivants à Bonn et ses Environs.
+										li La promotion du développement socioculturel des membres.
+										li La promotion du rapprochement internationale par l ́intégration, la fraternité et l ́amitié entre les Ivoiriens, entre les Ivoiriens et leurs concitoyens d ́autres nationalités.
+										li Le Respect mutuel définit nos valeurs et l ́amour que nous avons pour notre PAYS et sommes conscients que nous venons de la même mère qui est LA CÔTE D ́IVOIRE. S ́entraider et se soutenir pendant les moments de joie et malheur sont nos devises premières.
+									| Le but de la charte est à travers des événements culturels:
+									ul
+										li Conférences
+										li Galas
+										li Festivals Africains et Allemands
+										li Activités Sportives et Socioculturelles
+										li Expositions et Journées Culturelles - Traditions Africaines
+										li Fêtes de fin d ́année à réaliser.
+								.panel-footer(style='background-color: #DD0000')
+									h5
+										.blockquote-reverse
+											font(color="#00000000") 
+												| Chères Ivoiriennes et chers Ivoiriens .L'Union fait la force! Ensemble, nous allons plus loin et pouvons construire
+												| quelque chose de durable dans la paix. 
+				.col-sm-2
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #DD0000')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_laic') 
+										font(color='#00000000') Laïcs
+							#collapse_laic.panel-collapse.collapse
+								.panel-body 
+									
+									dl
+										dt Laïc:
+										dd
+											| Qui n'est pas lié aux institutions religieuses.
+											| Chacun pratique sa réligion. Bonnivoire ne s'occupe pas de réligion.
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#00000000") 
+												| bonnivoire
+				.col-sm-4
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #FFCE00')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_smart') 
+										font(color='#00000000') Smart
+							#collapse_smart.panel-collapse.collapse
+								.panel-body 
+									
+									dl
+										dt Smart:
+										dd
+											| Terme anglais utilisé pour qualifier une personne élégante, raffinée.
+									ul
+										li 
+											strong S: &nbsp;
+											| nos objectifs sont 
+											strong Spécifiques 
+										li 
+											strong M &nbsp;
+											| nos objectifs sont 
+											strong Mésurables
+										li 
+											strong A &nbsp;
+											| nos objectifs sont 
+											strong Attractifs
+										li 
+											strong R &nbsp;
+											| nos objectifs sont 
+											strong Raisonables
+										li 
+											strong T &nbsp;
+											| nos objectifs sont  
+											strong Time-bound ( Limités dans le temps )
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#00000000") 
+												| bonnivoire
+					//p hello10
+				.col-sm-2
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_transparence') 
+										font(color='#FFFFFF') Transparence
+							#collapse_transparence.panel-collapse.collapse
+								.panel-body 
+									
+									| Nous voulons te convaincre et pour cela nous te promettons d'êrte transparents comme une vitre propre.
+									| Notre équipe est joignable par email 24/24, aidez-nous à passer les informations de décès, de naissance, d'évènements.
+									| La référence pour être informé est bonnivoire-ev.de.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#009E60") bonnivoire
+				.col-sm-3
+					//.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_transparence') 
+										font(color='#FFFFFF') Transparence
+							#collapse_transparence.panel-collapse.collapse
+								.panel-body 
+									
+									| Nous voulons te convaincre et pour cela nous te promettons d'êrte trasparents comme une vitre propre.
+									| Notre équipe est joignable par email 24/24, aidez-nous à passer les informations de décès, de naissance, d'évènements.
+									| La référence pour être informé est bonnivoire-ev.de.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#009E60") bonnivoire
+				.col-sm-5
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #FFFFFF')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_confidentialite') 
+										font(color='#F77F00') Obligation de confidentialité
+							#collapse_confidentialite.panel-collapse.collapse
+								.panel-body 
+									
+									| Notre équipe est tenue à une obligation de discrétion professionnelle concernant toutes les informations portées à notre connaissance 
+									| pendant que nous sommes à la tête de bonnivoire, et aussi après. Nous vous promettons discretion et pour cela vous demandons de nous faire confiance.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#009E60") bonnivoire
+				.col-sm-2
+					//.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_transparence') 
+										font(color='#FFFFFF') Transparence
+							#collapse_transparence.panel-collapse.collapse
+								.panel-body 
+									
+									| Nous voulons te convaincre et pour cela nous te promettons d'êrte trasparents comme une vitre propre.
+									| Notre équipe est joignable par email 24/24, aidez-nous à passer les informations de décès, de naissance, d'évènements.
+									| La référence pour être informé est bonnivoire-ev.de.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#009E60") bonnivoire
+				.col-sm-2
+					//.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_transparence') 
+										font(color='#FFFFFF') Transparence
+							#collapse_transparence.panel-collapse.collapse
+								.panel-body 
+									
+									| Nous voulons te convaincre et pour cela nous te promettons d'êrte trasparents comme une vitre propre.
+									| Notre équipe est joignable par email 24/24, aidez-nous à passer les informations de décès, de naissance, d'évènements.
+									| La référence pour être informé est bonnivoire-ev.de.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h5
+										.blockquote-reverse
+											font(color="#009E60") bonnivoire
+	hr.featurette-divider
+
+	.jumbotron.jumbotron-fluid(style='background-color: #ffffffff')
+		.container
+			.embed-responsive.embed-responsive-16by9
+				iframe(width="560" height="315" src="https://www.youtube.com/embed/TObwKz8RjvM" frameborder="1|0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="")
+			h3.display-4 Hommage vibrant aux président(e)s de bonnivoire - Pour vous cette vidéo - Big UP -  Enjoy !!!
+			p.lead
+				font(color= "#009E60") Du 08 Septembre 2001 au 13 Juin 2008: 
+				font(color= "#F77F00") Yébo, Désiré Maurice<br/>				
+				font(color= "#009E60")  Du 13 Juin 2008 au 15 Janvier 2010:  
+				font(color= "#F77F00") Djolokomé, Osry Hugues<br/>
+				font(color= "#009E60") Du 15 Janvier 2010 au 30 Juin 2019:  
+				font(color= "#F77F00") Able, Godfroy<br/>
+				font(color= "#009E60") Depuis le 30 Juin 2019 jusqu´à ce jour: 
+				font(color= "#F77F00") Able, Marie Stephanie <br/>
+	
+	hr.featurette-divider
+	section#about.section
+		.container
+			.row
+			.col-md-8.col-md-offset-2
+				.heading
+				h1
+					span 
+						font(color="#F77F00") Notre formidable équipe
+				.sub-heading
+				p
+					h1 
+					strong
+						font(color="#009E60") Nous travaillons pour te satisfaire. Rejoins vite le mouvement....
+			hr.featurette-divider
+			.row
+			.col-md-3
+				.team-box
+				img.img-responsive(src='../images/buroProfiles/stephanie.jpg' alt='')
+				.roles
+					h5
+					strong 
+						font(color="#F77F00") Stéphanie<br/>
+						font(color="#009E60") Présidente <br/>
+						font(color="#009E60") Marketing et activités socioculturelles
+			
+			.col-md-3
+				.team-box
+				img.img-responsive(src='../images/buroProfiles/florentine.jpg' alt='')
+				.roles
+					h5
+					strong 
+						font(color="#F77F00") Florentine<br/>
+						font(color="#009E60") Sécrétariat général
+					ul.social-profile
+			.col-md-3
+				.team-box
+				img.img-responsive(src='../images/buroProfiles/marie_catherine.jpg' alt='')
+				.roles
+					h5
+					strong 
+						font(color="#F77F00") Marie Cathy<br/>
+						font(color="#009E60") Trésorerie
+					ul.social-profile
+			.col-md-3
+				.team-box
+				img.img-responsive(src='../images/buroProfiles/sidonie.jpg' alt='')
+				.roles
+					h5
+					strong 
+						font(color="#F77F00") Sidonie <br/>
+						font(color="#009E60") Information et Communication
+					ul.social-profile
+			.col-md-3
+				.team-box
+				img.img-responsive(src='../images/buroProfiles/clarisse.jpg' alt='')
+				.roles
+					h5
+					strong 
+						font(color="#F77F00") Clarisse<br/>
+						font(color="#009E60") Organisation
+					ul.social-profile
+		.container
+			p.pull-right
+				a(href='#', style={color: "#009E60"}) Haut de page	
+			
 		hr.featurette-divider
-		.row.featurette
-			.col-md-7.col-md-push-5
-				h2.featurette-heading
-					| Oh yeah, it's that good. 
-					span.text-muted See for yourself.
-				p.lead
-					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-			.col-md-5.col-md-pull-7
-				img.featurette-image.img-responsive.center-block(src='../images/featurette2.jpg', alt='Generic placeholder image')
+		.section#contact.page-section
+			form#contact-form(method="POST" action="/" role="form" enctype="application/x-www-form-urlencoded")
+				.messages
+				.controls
+					.container
+						.row
+						.col-lg-8
+							.row
+							.col-md-6
+								.form-group
+								label(for="form_name") 
+									font(color= "#FFFFFF") Prénoms *
+								input#form_name.form-control(type="text" name="surname" placeholder="Entrez votre prénom *" required="required" data-error="Prenom requis.")
+								.help-block.with-errors
+							.col-md-6
+								.form-group
+								label(for="form_lastname") 
+									font(color= "#FFFFFF") Nom de Famille *
+								input#form_lastname.form-control(type="text" name="name" placeholder="Entrez votre nom de Famille *" required="required" data-error="Nom de Famille requis.")
+								.help-block.with-errors
+							.row
+							.col-md-6
+								.form-group
+								label(for="form_email") 
+									font(color= "#FFFFFF") Email *
+								input#form_email.form-control(type="from" name="email" placeholder="Entrez votre adresse email *" required="required" data-error="Email valide requis.")
+								.help-block.with-errors
+							.col-md-6
+								.form-group
+								label(for="form_need") 
+									font(color= "#FFFFFF") Comment vous aider? - choisir *
+								select#form_need.form-control(name="subject"  required="required" data-error="Comment vous aider? Choisir.")
+									option(value="") 
+									option(value="Reporter un évènement") Annoncer un évènement
+									option(value="Demande urgente d'aide") Demande urgente d'aide
+									option(value="Demande urgente d'aide") Question à Colombe
+									option(value="Proposition d'idéese") Proposition d'idées
+									option(value="Autres") Autres
+								.help-block.with-errors
+							.row
+							.col-md-12
+								.form-group
+								label(for="form_message") 
+									font(color= "#FFFFFF") Message *
+								textarea#form_message.form-control(name="message" placeholder="Message pour bonnivoire *" rows="7" required="required" data-error="Laissez nous un Message.")
+								.help-block.with-errors
+							.col-md-12
+								input.btn.btn-success.btn-send(type="submit" value="Envoi", style="background-color:#009E60")
+							.row
+							.help-block.with-errors
 		hr.featurette-divider
-		.row.featurette
-			.col-md-7
-				h2.featurette-heading
-					| And lastly, this one. 
-					span.text-muted Checkmate.
-				p.lead
-					| Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-			.col-md-5
-				img.featurette-image.img-responsive.center-block(src='../images/featurette3.jpg', alt='Generic placeholder image')
-		hr.featurette-divider
-		// /END THE FEATURETTES
-		// FOOTER
+	//section#contact4.contact4
+		.container
+			.row
+				.contact-overlay
+					.col-md-6.p-0
+						iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d261411.5090793667!2d7.111019307989408!3d50.5934843509298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee19f7ccbda49%3A0x86dbf8c6685c9617!2sBonn!5e0!3m2!1sde!2sde!4v1566418607599!5m2!1sde!2sde' width='800' height='600' frameborder='0' style='border:0' allowfullscreen='')
+					.col-md-5.col-md-offset-1.col-sm-6
+						h1.section-title Get in Touch
+						ul.list-unstyled
+							li.addr-title Address Info
+							li
+								i.fa.fa-phone
+								span 977) 324 644 676 / (800) 123 456 789
+							li
+								i.fa.fa-home
+								span 5 New York City, NY,United States
+							li
+								i.fa.fa-envelope-o
+								span admin@bootexperts.com
+						ul.list-inline.social-links
+							li.addr-title  Social Links
+							br
+							br
+							li
+								i.fa.fa-linkedin
+							li
+								i.fa.fa-facebook
+							li
+								i.fa.fa-twitter
+							li
+								i.fa.fa-google-plus
+
+			hr.featurette-divider
+				
+
+	
+	// FOOTER
+	section#footer_index.container
+		
 		footer
 			p.pull-right
-				a(href='#') Back to top
+				a(href='#', style={color: "#009E60"}) Haut de page <br/> <br/> <br/> <br/>
+				script(type='text/javascript').
+					//<![CDATA[
+					var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+					document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+				//]]>
+				script(language='JavaScript' type='text/javascript').
+					TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
+			
 			p
-				| © 2019 bonnivoire-ev 
-				a(href='#') Privacy
+				strong
+					
+					a(href='#contact', style={color: "#009E60"})
+						span.glyphicon.glyphicon-envelope &nbsp;
+					font(color="#009E60") Bonnivoire-ev - &nbsp;
+					font(color="#009E60") Postfach 7408 - 53074 Bonn
+			p
+				font(color="#F77F00") © 2019 bonnivoire-ev &nbsp;
+				a(href='/about', style={color: "#F77F00"}) - Privacy
 				|  · 
-				a(href='#') Terms
+				a(href='/about', style={color: "#F77F00"}) - Terms
+	
 
 
-
+	

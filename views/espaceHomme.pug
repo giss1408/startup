@@ -1,0 +1,50 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+append styles
+	// Custom styles for this template
+	link(href='stylesheets/blog.css', rel='stylesheet')
+block body
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href='/blog', style={color: "#FFFFFFFF"}) Kongossa
+					//li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) Conseils beauté
+					//li
+						a(href='/about', style={color: "#FFFFFFFF"}) Conseils cuisine
+					//li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+							//a.blog-nav-item(href='#') About
+			
+				
+	.container
+		.blog-header
+			h1.blog-title Bonnivoire #{__('KONGOSSA_NAV_ESPACE_HOMME')}.
+			p.lead.blog-description 
+				font(color="#009E60") Toute l'actualité du bien-être, vêtements, business de la mode masculine.
+	hr.featurette-divider
+
+
+
+
+
+
+
+
+

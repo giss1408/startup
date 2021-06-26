@@ -1,0 +1,434 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+append styles
+	// Custom styles for this template
+	link(href='stylesheets/blog.css', rel='stylesheet')
+block body	
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					//li
+						a(href='/blog/archiveKongossa', style={color: "#FFFFFFFF"}) Relations amoureuses
+					li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) #{__('KONGOSSA_NAV_BEAUTE')}
+						//Conseils beauté
+					li
+						a(href='/cuisine', style={color: "#FFFFFFFF"}) #{__('KONGOSSA_NAV_CUISINE')}
+						//Conseils cuisine
+					li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) #{__('KONGOSSA_NAV_ESPACE_HOMME')}
+						//Espace hommes
+						//a.blog-nav-item(href='#') About
+	.container
+		.blog-header
+			h1.blog-title #{__('KONGOSSA_TITRE')}
+				//Le KONGOSSA de Bonnivoire 
+			p.lead.blog-description 
+				font(color="#009E60")  #{__('KONGOSSA_SOUS_TITRE')}
+				//Les ragots, les histoires de coeur, conseils en amour, Colombe vous répond.
+		hr.featurette-divider
+		.row
+			.col-sm-7.blog-main
+				.blog-post
+					p.lead.blog-description 
+						font(color="#009E60")  #{__('KONGOSSA_SOUS_TITRE_OUVERT')} <br/>#{__('KONGOSSA_SOUS_TITRE_OUVERT_COLOMBE')} <br/><br/>
+						//Le Kongossa est ouvert. Ecris à Colombe, choisi comme thème "QUESTION À COLOMBE". 
+						//As-tu un problème sur le coeur? Colombe a la solution.
+						a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/#contact' style={background:"#F77F00 ",color: "#ffffffff"}, role='button') #{__('KONGOSSA_ECRIRE_A_COLOMBE')}
+						//Ecrire à Colombe
+					
+					hr
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_colombe') 
+										font(color='#FFFFFF') #{__('KONGOSSA_POST_18_Feb_2020_COLOMBE')}
+										//08 Septembre , 2019 par Eveline
+							#collapse_colombe.panel-collapse.collapse
+								.panel-body 									
+									p.blog-post-meta
+										| #{__('KONGOSSA_POST_18_Feb_2020_COLOMBE_DATE')} 
+										// 
+										a(href='#', style={color: "#F77F00"}) #{__('KONGOSSA_POST__18_Feb_2020_COLOMBE_NOM')}
+										//
+									p
+										| #{__('KONGOSSA_POST_18_Feb_2020_COLOMBE_TEXT')}									
+										//hr
+										//| #{__('KONGOSSA_POST_18_Feb_2020_COLOMBE_REPONSE')}
+									
+
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") #{__('KONGOSSA_COLOMBE_SIGNATURE')}					
+						
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_julienne') 
+										font(color='#FFFFFF') #{__('KONGOSSA_POST_19_02_2020_JULIENNE')}
+							#collapse_julienne.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| #{__('KONGOSSA_POST_19_02_2020_JULIENNE_DATE')}
+									a(href='#', style={color: "#F77F00"}) #{__('KONGOSSA_POST_19_02_2020_JULIENNE_NOM')}
+								p
+									| #{__('KONGOSSA_POST_19_02_2020_JULIENNE_TEXTE')}
+									hr
+									| #{__('KONGOSSA_POST_19_02_2020_JULIENNE_REPONSE')}
+		
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") #{__('KONGOSSA_COLOMBE_SIGNATURE')}
+					
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_josee') 
+										font(color='#FFFFFF') #{__('KONGOSSA_POST_12_09_2019_JOSEE')} 
+							#collapse_josee.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| #{__('KONGOSSA_POST_12_09_2019_JOSEE_DATE')} 
+									a(href='#', style={color: "#F77F00"}) #{__('KONGOSSA_POST_12_09_2019_JOSEE_NOM')} 
+								p
+									| #{__('KONGOSSA_POST_12_09_2019_JOSEE_TEXTE')}
+									
+									hr
+									| #{__('KONGOSSA_POST_12_09_2019_JOSEE_REPONSE')}
+		
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") #{__('KONGOSSA_COLOMBE_SIGNATURE')} 
+
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_jakob') 
+										font(color='#FFFFFF') #{__('KONGOSSA_POST_13_09_2019_JAKOB')} 
+							#collapse_jakob.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| #{__('KONGOSSA_POST_13_09_2019_JAKOB_DATE')} 
+									a(href='#', style={color: "#F77F00"}) #{__('KONGOSSA_POST_13_09_2019_JAKOB_NOM')} 
+								p
+									| #{__('KONGOSSA_POST_13_09_2019_JAKOB_TEXTE')} 
+									hr
+									| #{__('KONGOSSA_POST_13_09_2019_JAKOB_REPONSE')} 
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") #{__('KONGOSSA_COLOMBE_SIGNATURE')}
+
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_melissa') 
+										font(color='#FFFFFF') #{__('KONGOSSA_POST_20_09_2019_MELISSA')}
+							#collapse_melissa.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| #{__('KONGOSSA_POST_20_09_2019_MELISSA_DATE')} 
+									a(href='#', style={color: "#F77F00"}) #{__('KONGOSSA_POST_20_09_2019_MELISSA_NOM')}
+								p
+									| #{__('KONGOSSA_POST_20_09_2019_MELISSA_TEXTE')}
+									hr
+									| #{__('KONGOSSA_POST_20_09_2019_MELISSA_REPONSE')}
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") #{__('KONGOSSA_COLOMBE_SIGNATURE')}
+
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_alice') 
+										font(color='#FFFFFF') 23 Août , 2019 par Alice
+							#collapse_alice.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| 23 Août , 2019 par 
+									a(href='#', style={color: "#F77F00"}) Alice
+								p
+									| Bonjour chère Colombe, j´ai un sérieux problème qui est ceci: Je suis une femme mariée à un riche homme gentil, généreux, aimable, poli et qui me donne tout ce que je veux. 
+									| Et même me fait des superbes surprises, un vrai ANGE! Mais je le trompe avec d'autres hommes à chaques petites occassions que j´ai. Maintenant je suis arrivée à un stade où ma conscience me gronde et pleure sans raison quand je le vois. 
+									| Je crois que je fais un début de dépression. Aide moi stp, dois-je lui avouer tout ou taire? Que faire? 
+									hr
+									| Ma chère Alice, de femme à femme, tu ne devrais rien lui dire. Cela te rendrais encore plus malheureuse car la décèption de ton homme sera aussi grande que l'affection qu'il te porte. 
+									| As-tu déjà entendu des questions comme : "comment as-tu pu me faire ça? Pourtant je t'ai tout donné." Tu devras vivre avec tes remords, c'est le prix à payer quand on est infidèle. Ce que je te propose est d'arrêter
+									| IMMEDIATEMENT ces choses et te demander ce qui te manque. Le mariage est un contrat basé sur la confiance et tu devrais démissioner si tu ne l'aimes plus. D'un autre côté, toute femme à des besoins et si tu veux plus de sexe, parles-en avec ton homme.
+									| Satisfaire une femme s'apprend, tout comme conduire une voiture. La plupart des hommes se concentrent sur le côté matériel de la vie et oublient le sensuel, il faut donc le leur rappeler gentillement, mettre un peu de piment dans ton couple avec les sex-toys,
+									| les massages à deux, les sorties en amoureux... Youtube est ton meilleur ami, dis-le lui. La communication est la clé du bonheur.
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") Ta Colombe.
+
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_jason') 
+										font(color='#FFFFFF') 24 Août , 2019 par Jason
+							#collapse_jason.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| 24 Août , 2019 par 
+									a(href='#', style={color: "#F77F00"}) Jason
+								p
+									| Chère Colombe, je suis un jeune africain "un vrai cassanova". J´ai tombé toutes les filles de mon quartier et fais toujours des ravages sur mon chemin. 
+									| Je me sens beau, fort, comme un vrai gars. Il y a 2 mois qu´une nouvelle fille a deménagé dans mon quartier, elle est belle comme le couché du soleil, son regard est insurportable avec des yeux revolver. 
+									| Un truc de foux! Je fantasme même sur elle toutes les nuits. Je crois que je suis tombé amoureux d´elle mais elle ne me remarque même pas et j´ai peur qu´elle me dise NON. 
+									| Car c´est sûr qu´elle a entendu parler de moi le tombeur, je me suis fait moi même une mauvaise réputation. "C´est cailloux qui casse cailloux" et j´ai trouvé mon cailloux qui me casse, mon terminus.
+									| Comment faire? 
+									hr
+									| Mon chèr Jason, je te remercie pour ta franchise. Chez nous en Côte d'ivoire on dit "Gbê est mieux que drap", cela signifie te dire la vérité est mieux que te laisser avoir honte. Tu es un môgô puissant.
+									| Alors comme ça tes amis se battent pour faire les millions, toi tu utilises toute ton énergie à sortir les filles de ton quartier, qu'est-ce qui ne va pas avec toi? Tu veux entrer dans le livre guiness des records ou quoi?
+									| Je ne sais pas l'objectif que tu poursuis, mais voici un petit conseil de femme: "La femme a un pouvoir sacré en elle,il ne faut pas sortir avec n'importe laquelle, ni te foutre d'elles". Cherche-toi une femme et commence un nouveau chapitre de ta vie.
+									| L'amour sacré d'une femme peux faire briller ton ètoile, mais la malédiction de toutes celles que tu as humiliées est comme un fardeau sur tes épaules. J'en connais des comme toi, ils ont des succès éphémères dans la vie, dans le travail, un jour tout s'effondre, à part le sexe
+									| ils n'ont rien d'autre à proposer.<br/>
+									| Tu devrais te faire une amie avec la nouvelle fille, pas de sexe, rien que de l'amitié, elle doit être d'un autre niveau que toutes les autres que tu couchais. Avec elle tu apprendras beaucoup de choses sur le sens des relations et sur ce que les femmes attendent vraiment.<br/>
+									| J'espère n'avoir pas été trop dure avec toi. Bonne chance. 
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") Ta Colombe.
+
+				//.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_Maplorly') 
+										font(color='#FFFFFF') 24 Août , 2019 par Maplôrly
+							#collapse_Maplorly.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| 24 Août , 2019 par 
+									a(href='', style={color: "#F77F00"}) Maplôrly
+								p
+									| Bonjour Colombe, ma go (copine) dja foule toujours sur moi devant les gens, en puplique, elle aime ca même me donner la HONTE. 
+									| Moi je suis pas fan de ca, il y a des jours où j´ai envie de la daba propre propre devant ses camarades là pour lui dire que c´est moi l´homme comme un bon africain. 
+									| De chicoter ca pour lui faire comprendre ou bien? 
+									hr
+									| Bonjour Maplôrly, c'est quelle femme ça que tu as choisie? Elle doit sûrement avoir d'autres attributs véto ( une qualité qui fait excuser tous les autres défauts) pour que tu sois toujours avec elle. 
+									| Je suis moi même bouleversée par la facçon avec laquelle elle te traite. Mais je crois qu'il lui manque quelque chose, elle essaie d'attirer ton attention de cette manière. 
+									| Si elle a tout ce qu'elle désire et se comporte de la sorte, c'est qu'elle t'aime sinon t'aurait sûrement déjá quitté.<br/>
+									| Ma copine Divine de Londre me disait la dernière fois: "une femme impolie dans son foyer est une femme insatisfaite au lit". Une piste que je propose est de te renseigner sur internet comment faire atteindre
+									| l'orgasme à une femme, il y a des tas de choses à ce sujet, les femmes fontaines, l'éjaculation des femmes, les dildos... A ce qui se dit, l'orgasme nous détend. Vous les hommes vous croyez que lorsque vous êtes satisfaits, la terre entière est satisfaite. Bonne recherche.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") Ta Colombe.
+
+					.blog-post
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+									a(data-toggle='collapse' href='#collapse_Yannick') 
+										font(color='#FFFFFF') 28 Août , 2019 par Yannick
+							#collapse_Yannick.panel-collapse.collapse
+								.panel-body 
+									
+								p.blog-post-meta
+									| 28 Août , 2019 par 
+									a(href='', style={color: "#F77F00"}) Yannick
+								p
+									| Salut Colombe, je viens pleurer sur tes épaules; ma femme veux que que je mange lje me demande comment l'homme peut être aussi mauvais. Je vis en Allemagne où grâce à Dieu j'ai pu cimenter mon existence,
+									| rencontré une femme formidable, battante, une existence sans trop de complications quoi. C'est alors qu'on s'est dit tous les deux que nous devons penser aux petits frères  en afrique pour soulager Maman.
+									| On se démerde pour faire venir la soeur à ma femme tous frais payés, billet d'avion, titre de séjour, tout ce qu'il faut pour ne pas que la soeur endure la soufrance du début que nous avons connue.
+									| Après quelque temps, la belle deviens invivable, nous traitent d'ignorants, les informations que nous lui donnons lui sont mensonges, jusqu'à ce qu'elle décide de partir de la maison. Elle vivait chez nous tous frais payés, eau, nourriture,
+									| cours d'allemand... Elle a poussé le bouchon jusqu'à essayer de nous envoyer en justice, mais comme Dieu ne dort pas, notre fondation n'a pas tremblé. Elle a des conseillés qui l' ont menée sur
+									hr
+									| Bonjour Maplôrly, c'est quelle femme ça que tu as choisie? Elle doit sûrement avoir d'autres attributs véto ( une qualité qui fait excuser tous les autres défauts) pour que tu sois toujours avec elle. 
+									| Je suis moi même bouleversée par la facçon avec laquelle elle te traite. Mais je crois qu'il lui manque quelque chose, elle essaie d'attirer ton attention de cette manière. 
+									| Si elle a tout ce qu'elle désire et se comporte de la sorte, c'est qu'elle t'aime sinon t'aurait sûrement déjá quitté.<br/>
+									| Ma copine Divine de Londre me disait la dernière fois: "une femme impolie dans son foyer est une femme insatisfaite au lit". Une piste que je propose est de te renseigner sur internet comment faire atteindre
+									| l'orgasme à une femme, il y a des tas de choses à ce sujet, les femmes fontaines, l'éjaculation des femmes, les dildos... A ce qui se dit, l'orgasme nous détend. Vous les hommes vous croyez que lorsque vous êtes satisfaits, la terre entière est satisfaite. Bonne recherche.
+									
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#009E60") Ta Colombe.
+					
+						hr
+					//	a(href='#') dis parturient montes
+						| , nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+				//	blockquote
+						p
+							| Curabitur blandit tempus porttitor. 
+							strong Nullam quis risus eget urna mollis
+							|  ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+					p
+						| Etiam porta 
+						em sem malesuada magna
+						|  mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+					h2 Heading
+					p
+						| Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+					h3 Sub-heading
+					p
+						| Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					pre.
+					p
+						| Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+					h3 Sub-heading
+					p
+						| Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+					ul
+						li Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+						li Donec id elit non mi porta gravida at eget metus.
+						li Nulla vitae elit libero, a pharetra augue.
+					p
+						| Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+					ol
+						li Vestibulum id ligula porta felis euismod semper.
+						li
+							| Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+						li Maecenas sed diam eget risus varius blandit sit amet non magna.
+					p
+						| Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
+
+					.blog-post
+						h2.blog-post-title Another blog post
+						p.blog-post-meta
+							| December 23, 2013 by 
+							a(href='#') Jacob
+						p
+							| Cum sociis natoque penatibus et magnis 
+							a(href='#') dis parturient montes
+							| , nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+						blockquote
+							p
+								| Curabitur blandit tempus porttitor. 
+								strong Nullam quis risus eget urna mollis
+								|  ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+						p
+							| Etiam porta 
+							em sem malesuada magna
+							|  mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+						p
+							| Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+			//	.blog-post
+					h2.blog-post-title New feature
+					p.blog-post-meta
+						| December 14, 2013 by 
+						a(href='#') Chris
+					p
+						| Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				ul
+					li Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+					li Donec id elit non mi porta gravida at eget metus.
+					li Nulla vitae elit libero, a pharetra augue.
+				p
+					| Etiam porta 
+					em sem malesuada magna
+					|  mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+				p
+					| Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+				nav
+					ul.pager
+						li
+							a(href='#') Previous
+						li
+							a(href='#') Next
+			.col-sm-4.col-sm-offset-1.blog-sidebar
+				.sidebar-module.sidebar-module-inset
+					h4 #{__('KONGOSSA_A_PROPOS_COLOMBE')}
+					//A propos de Colombe
+					p
+						| #{__('KONGOSSA_A_PROPOS_COLOMBE_TEXT')}
+					//	| Colombe est experte en relations amoureuses et en sexualité. Anonyme et discrète,
+						| elle n' a pas encore écrit de livre, mais expérimente beaucoup dans ces domaines.
+						|  Par ses conseils, nous espèrons donner solution et joie de vivre.
+						| Colombe accompagne gratuitement la nouvelle bonnivoire, elle est toujours en ligne pour tes petits soucis.
+
+		
+				.sidebar-module
+						h4 #{__('KONGOSSA_ARCHIVE_TITLE')}
+						//Archives
+						ol.list-unstyled
+							li
+								a(href='/blog/archiveKongossa#archives_08_2019', style={color: "#009E60"}) #{__('KONGOSSA_ARCHIVE_08_2019')}
+						ol.list-unstyled
+							li
+								a(href='/blog/archiveKongossa#archives_09_2019', style={color: "#009E60"}) #{__('KONGOSSA_ARCHIVE_09_2019')}
+						//	li
+								a(href='#') February 2014
+							li
+								a(href='#') January 2014
+							li
+								a(href='#') December 2013
+							li
+								a(href='#') November 2013
+							li
+								a(href='#') October 2013
+							li
+								a(href='#') September 2013
+							li
+								a(href='#') August 2013
+							li
+								a(href='#') July 2013
+							li
+								a(href='#') June 2013
+							li
+								a(href='#') May 2013
+							li
+								a(href='#') April 2013
+				//.sidebar-module
+					h4 Elsewhere
+					ol.list-unstyled
+						li
+							a(href='#') GitHub
+						li
+							a(href='#') Twitter
+						li
+							a(href='#') Facebook
+	footer.blog-footer
+		pfooter.blog-footer
+		p
+			font(color="#009E60") Le Kongossa de bonnivoire  <br/> 
+			font(color="#F77F00") © 2019 bonnivoire-ev 
+				a(href='/about', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='/about', style={color: "#F77F00"}) -Terms
+	block content

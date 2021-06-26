@@ -1,0 +1,59 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+
+append styles
+	// Custom styles for this template
+	link(href='stylesheets/blog.css', rel='stylesheet')
+block body
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				//ul.nav.navbar-nav
+					li
+						a(href='/about', style={color: "#FFFFFFFF"}) Relations amoureuses
+					li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) Conseils beauté
+					li
+						a(href='/about', style={color: "#FFFFFFFF"}) Conseils cuisine
+					li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+							//a.blog-nav-item(href='#') About
+	.container
+		.blog-header
+			h1.blog-title Bonnivoire Nécrologie.
+			p.lead.blog-description 
+				font(color="#009E60") La grande famille Bonnivoire soutient ses frères et soeurs dans la détresse.
+	hr.featurette-divider
+
+	.jumbotron.jumbotron-fluid(style='background-color: #ffffffff')
+		.container
+			.embed-responsive.embed-responsive-16by9
+				iframe(width='560' height='315' src='https://www.youtube.com/embed/dN5xagyGdvk?autoplay=1' frameborder='0' allow='accelerometer autoplay = 1; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+			<br/>
+			<br/>
+			<br/>
+			h3.display-4 
+				font(color="#009E60") Hommage à nos frères et soeurs disparus,... trop tôt.
+			font(color="#009E60") La grande famille Bonnivoire ne t'oubliera jamais. Que la terre te soit légère....
+
+	hr.featurette-divider
+
+	.container
+		a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' href='/#contact' style={background:"#009E60 ",color: "#ffffffff"}, role='button') Nous contacter pour un décès
+
+	hr.featurette-divider
+			
+				
+	footer.blog-footer
+		p
+			font(color="#009E60") Bonnivoire nécrologie <br/> 
+			font(color="#F77F00") © 2019 bonnivoire-ev 
+				a(href='#', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='#', style={color: "#F77F00"}) -Terms

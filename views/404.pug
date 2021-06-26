@@ -1,0 +1,29 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append styles
+	//	!-- Custom styles for this template --
+	link(href="/stylesheets/cover.css", rel="stylesheet")
+
+block body
+	.site-wrapper
+		.site-wrapper-inner
+			.cover-container
+				.masthead.clearfix
+					.inner
+						h3.masthead-brand bonnivoire-ev
+						nav
+							ul.nav.masthead-nav
+								//li.active 
+									a(href="#") Home
+								//li
+									a(href="#") Features
+								//li
+									a(href="#") Contact
+				.inner.cover
+					h1.cover-heading Oops!
+					p.lead We can't seem to find the page you're looking for. Sorry.
+					p.lead
+					a(href="../", class="btn btn-lg btn-default", style={color: "#009E60"}) Goodbye
+
+				.mastfoot
+					.inner
+						//p Cover template for <a href="http://getbootstrap.com">Bootstrap </a>, by <a href="https://twitter.com/mdo">@mdo</a>.

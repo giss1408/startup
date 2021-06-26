@@ -1,0 +1,239 @@
+extends ../node_modules/pug-bootstrap/_bootstrap
+append head
+	// Global site tag (gtag.js) - Google Analytics
+	script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-146372309-1')
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-146372309-1');
+append styles
+	// Custom styles for this template
+	link(href='/stylesheets/blog.css', rel='stylesheet')
+block body	
+	nav#topnav.navbar.navbar-default.fixed-to-top
+		.container
+			.navbar-header
+				button(type="button" ,class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar" ,aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a(class="navbar-brand", href="../", style={color: "#FFFFFFFF"}) bonnivoire-ev
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href='/projets', style={color: "#FFFFFFFF"}) #{__('PROJECTS')}
+					//li
+						a(href='/beaute', style={color: "#FFFFFFFF"}) Conseils beauté
+					//li
+						a(href='/about', style={color: "#FFFFFFFF"}) Conseils cuisine
+					//li
+						a(href='/espaceHomme', style={color: "#FFFFFFFF"}) Espace hommes
+							//a.blog-nav-item(href='#') About
+	.container
+		.blog-header
+			h1.blog-title #{__('BONNIVOIRE_FEUILLE_DE_ROUTE')}
+			p.lead.blog-description 
+				font(color="#009E60") #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_SOUS_TITRE')}
+
+	section#convaincre1.section
+		.container
+			.row
+				.col-sm-12
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #009E60')
+								h4.panel-title
+								a(data-toggle='collapse' href='#collapse2') 
+									strong
+										font(color='#FFFFFF') #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{__('BONNIVOIRE_FEUILLE_DE_ROUTE_VISION2020_2021')}
+							#collapse2.panel-collapse.collapse
+								.panel-body 
+									p
+										| #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_1')}
+										strong
+											a(href='/about', style={color: "#009E60"}) #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_LISTE_PROJETS')} &nbsp;
+										| #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_2')}
+										ul
+											li #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_3')}
+											li #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_4')}
+												strong
+													a(href='/about', style={color: "#009E60"}) <br/>#{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_5')}
+											li #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_6')}
+									p
+										| #{__('BONNIVOIRE_FEUILLE_DE_ROUTE_TE_CONVAINCRE_MESSAGE_7')}:&nbsp;&nbsp;&nbsp;
+										strong
+											font(color="#009E60") TE RENDRE FIER(E)
+
+												
+											
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") L ́union fait la force 
+										.blockquote
+												font(color="#009E60") 
+													| La Présidente: Stéphanie A.
+	hr.featurette-divider
+
+	section#convaincre2.section
+		.container
+			.row
+				.col-sm-12
+					.panel-group
+						.panel.panel-default
+							.panel-heading(style='background-color: #F77F00')
+								h4.panel-title
+								a(data-toggle='collapse' href='#bonnivoirevouvelle') 
+									strong
+										font(color='#FFFFFF') #{__('LA_NOUVELLE_BONNIVOIRE')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #{__('REJOINS_LE_MOVE')} ....
+							#bonnivoirevouvelle.panel-collapse.collapse
+								.panel-body 
+									p
+										| #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_1')} <br/><br/>	
+										strong
+											font(color="#009E60") #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_1_TRANSPARENCE')} <br/><br/>
+										| #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_2')} <br/><br/>
+										strong
+											font(color="#009E60") #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_2_UNIFIER')} <br/><br/>
+										| #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_3')}
+										strong
+											font(color="#009E60") <br/><br/> #{__('LA_NOUVELLE_BONNIVOIRE_VISION_MESSAGE_3_EXCELLENCE')} ...
+											
+								.panel-footer(style='background-color: #FFFFFF')
+									h4
+										.blockquote-reverse
+											font(color="#F77F00") Stéphanie A.
+		hr.featurette-divider
+		//.container
+			.blog-header
+				h1.blog-title Bonnivoire Roadmap .
+				p.lead.blog-description 
+					font(color="#009E60") Nos objectifs 2020- 2021.
+		.container
+			// Page header
+			.page-header
+					h2
+						font(color="#F77F00") Bonnivoire raodmap 2020 - 2021
+					small
+						font(color="#F77F00") Objectifs 2020 -2021. Nous y travaillons
+			// /Page header
+			// Timeline https://bootsnipp.com/snippets/BEQ24
+			.timeline
+				// Line component
+				.line.text-muted
+				// Separator
+				.separator.text-muted
+					time Aujourd'hui
+				// /Separator
+				// Panel
+				article.panel.panel-danger
+					// Icon
+					.panel-heading.icon
+						i.glyphicon.glyphicon-euro
+					
+					.panel-heading
+						h2.panel-title Förderfonds Demokratie - Bewerbung
+					// /Heading
+					// Body
+					.panel-body
+						| Demokratieförderung ist eine dauerhafte gesellschaftliche und politische Querschnittsaufgabe, 
+						| die sich auch an die zahlreichen Stiftungen in Deutschland richtet. Als konkreten Ausdruck der 
+						| Sorge um die Entwicklung der Demokratie, vor allem aber als solidarische Ermutigung für die Menschen, 
+						| die Demokratie tagtäglich im zivilgesellschaftlichen Kontext gestalten, haben acht deutsche Stiftungen den Förderfonds Demokratie ins Leben gerufen.<br/>
+						| Für den Förderfonds Demokratie können sich zivilgesellschaftliche Demokratie-Initiativen aus dem gesamten Bundesgebiet bewerben. 
+						| Jedes ausgewählte Projekt erhält für die Umsetzung des Vorhabens eine einmalige Förderung bis zu einer Höhe von 5.000 Euro. 
+						| Bewerbungen für die erste Förderrunde sind bis zum 30. September 2019 möglich.<br/>
+						a(href='https://www.foerderfonds-demokratie.de/', style={color: "#009E60"}) Förderfonds Demokratie
+					//.panel-footer
+						small Footer is also supported!
+					.separator.text-muted
+						time Frist 30. 9. 2019
+				//article.panel.panel-default.panel-outline
+					// Icon
+					.panel-heading.icon
+						i.glyphicon.glyphicon-picture
+					// /Icon
+					// Body
+					.panel-body
+						img.img-responsive.img-rounded(src='./images/DSC_0358.JPG', width='200', height='200')
+					// /Body
+					// /Panel
+					// Panel
+				article.panel.panel-primary
+					// Icon
+					.panel-heading.icon
+						i.glyphicon.glyphicon-road
+					// /Icon
+					// Heading
+					.panel-heading
+						h2.panel-title Liste des projets à élaborer 2020 - 2021
+					// /Heading
+					// Body
+					.panel-body
+						| Rencontre du bureau pour décider la liste des projets à poursuivre pour 2020
+					// /Body
+					// Footer
+					//.panel-footer
+						small Footer is also supported!
+					// /Footer
+					// /Panel
+					// Separator
+					.separator.text-muted
+						time Delai 30. 08. 2019
+						// /Separator
+						// Panel
+				//article.panel.panel-success
+					// Icon
+					.panel-heading.icon
+						i.glyphicon.glyphicon-plus
+					// /Icon
+					// Heading
+					.panel-heading
+						h2.panel-title New content added
+					// /Heading
+					// Body
+					.panel-body
+						| Anything you can do with 
+						code .panel
+						| , can be done in timeline too!
+					// /Body
+					// List group
+					ul.list-group
+						li.list-group-item Like
+						li.list-group-item list
+						li.list-group-item groups
+						li.list-group-item and
+						li.list-group-item tables
+					// /Panel
+					// Panel
+				//article.panel.panel-info.panel-outline
+					// Icon
+					.panel-heading.icon
+						i.glyphicon.glyphicon-info-sign
+					// /Icon
+					// Body
+					.panel-body
+						| That is all.
+					// /Body
+					// /Panel
+				// /Timeline
+	hr.featurette-divider
+
+	.container
+		a.btn.btn-primary.btn-change3(type='button' data-toggle='collapse' data-target='/status' aria-expanded='false' aria-controls='Landesintegrationskongress2019' 
+		href='/#contact' style={background:"#009E60 ",color: "#ffffffff"}, role='button') #{__('NOUS_CONTACTER-SUGGESTIONS_IDEES')}
+		//Nous contacter pour vos idées et suggestions
+
+	hr.featurette-divider
+	footer.blog-footer
+		pfooter.blog-footer
+		p
+			font(color="#009E60") bonnivoire - Feuille de route  <br/> 
+			font(color="#F77F00") © 2019 bonnivoire-ev 
+				a(href='/about', style={color: "#F77F00"}) - Privacy
+				|  · 
+				a(href='/about', style={color: "#F77F00"}) -Terms
+	//block content				
+
